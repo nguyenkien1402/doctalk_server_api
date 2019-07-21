@@ -11,8 +11,6 @@ namespace DocTalk_Dev_Auth.Models
             AspNetUserLogins = new HashSet<AspNetUserLogins>();
             AspNetUserRoles = new HashSet<AspNetUserRoles>();
             AspNetUserTokens = new HashSet<AspNetUserTokens>();
-            Doctor = new HashSet<Doctor>();
-            Patient = new HashSet<Patient>();
         }
 
         public string Id { get; set; }
@@ -35,7 +33,5 @@ namespace DocTalk_Dev_Auth.Models
         public ICollection<AspNetUserLogins> AspNetUserLogins { get; set; }
         public ICollection<AspNetUserRoles> AspNetUserRoles { get; set; }
         public ICollection<AspNetUserTokens> AspNetUserTokens { get; set; }
-        public ICollection<Doctor> Doctor { get; set; }
-        public ICollection<Patient> Patient { get; set; }
     }
 }
