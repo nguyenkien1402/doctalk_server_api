@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DocTalk_Dev_API.Models
+namespace DocTalk_Dev_Auth.Models
 {
     public partial class Doctor
     {
@@ -27,11 +27,11 @@ namespace DocTalk_Dev_API.Models
         public string ClinicName { get; set; }
         public bool? ConfirmDoctor { get; set; }
 
-        public virtual AspNetUsers User { get; set; }
-        public virtual ICollection<ConsultSession> ConsultSession { get; set; }
-        public virtual ICollection<DoctorActivate> DoctorActivate { get; set; }
-        public virtual ICollection<DoctorDocuments> DoctorDocuments { get; set; }
-        public virtual ICollection<DoctorProfessional> DoctorProfessional { get; set; }
-        public virtual ICollection<RequestCancellation> RequestCancellation { get; set; }
+        public AspNetUsers User { get; set; }
+        public ICollection<ConsultSession> ConsultSession { get; set; }
+        public ICollection<DoctorActivate> DoctorActivate { get; set; }
+        public ICollection<DoctorDocuments> DoctorDocuments { get; set; }
+        public ICollection<DoctorProfessional> DoctorProfessional { get; set; }
+        public ICollection<RequestCancellation> RequestCancellation { get; set; }
     }
 }

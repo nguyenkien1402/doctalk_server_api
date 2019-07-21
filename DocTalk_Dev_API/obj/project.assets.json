@@ -13109,11 +13109,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nguye\\source\\repos\\DocTalk_Dev\\DocTalk_Dev_API\\DocTalk_Dev_API.csproj",
+      "projectUniqueName": "C:\\Users\\nguye\\source\\DocTalk_Dev\\doctalk_server_api\\DocTalk_Dev_API\\DocTalk_Dev_API.csproj",
       "projectName": "DocTalk_Dev_API",
-      "projectPath": "C:\\Users\\nguye\\source\\repos\\DocTalk_Dev\\DocTalk_Dev_API\\DocTalk_Dev_API.csproj",
+      "projectPath": "C:\\Users\\nguye\\source\\DocTalk_Dev\\doctalk_server_api\\DocTalk_Dev_API\\DocTalk_Dev_API.csproj",
       "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nguye\\source\\repos\\DocTalk_Dev\\DocTalk_Dev_API\\obj\\",
+      "outputPath": "C:\\Users\\nguye\\source\\DocTalk_Dev\\doctalk_server_api\\DocTalk_Dev_API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

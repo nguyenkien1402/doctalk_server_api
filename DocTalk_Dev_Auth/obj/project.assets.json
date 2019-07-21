@@ -13310,11 +13310,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nguye\\source\\repos\\DocTalk_Dev\\DocTalk_Dev_Auth\\DocTalk_Dev_Auth.csproj",
+      "projectUniqueName": "C:\\Users\\nguye\\source\\DocTalk_Dev\\doctalk_server_api\\DocTalk_Dev_Auth\\DocTalk_Dev_Auth.csproj",
       "projectName": "DocTalk_Dev_Auth",
-      "projectPath": "C:\\Users\\nguye\\source\\repos\\DocTalk_Dev\\DocTalk_Dev_Auth\\DocTalk_Dev_Auth.csproj",
+      "projectPath": "C:\\Users\\nguye\\source\\DocTalk_Dev\\doctalk_server_api\\DocTalk_Dev_Auth\\DocTalk_Dev_Auth.csproj",
       "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nguye\\source\\repos\\DocTalk_Dev\\DocTalk_Dev_Auth\\obj\\",
+      "outputPath": "C:\\Users\\nguye\\source\\DocTalk_Dev\\doctalk_server_api\\DocTalk_Dev_Auth\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
