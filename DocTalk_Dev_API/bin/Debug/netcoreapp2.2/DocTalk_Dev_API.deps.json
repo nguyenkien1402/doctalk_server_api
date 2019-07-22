@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.2": {
       "DocTalk_Dev_API/1.0.0": {
         "dependencies": {
+          "IdentityModel": "3.10.10",
           "IdentityServer4": "2.5.0",
           "IdentityServer4.AccessTokenValidation": "2.7.0",
           "Microsoft.AspNetCore.App": "2.2.0",

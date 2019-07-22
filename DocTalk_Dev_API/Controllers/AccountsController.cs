@@ -9,6 +9,8 @@ using System.Collections;
 using Microsoft.AspNetCore.Authorization;
 using DocTalk_Dev_API.Models;
 using DocTalk_Dev_API.Views;
+using IdentityModel.Client;
+using System.Net.Http;
 
 namespace DocTalk_Dev_API.Controllers
 {
@@ -157,6 +159,37 @@ namespace DocTalk_Dev_API.Controllers
             return Ok(result);
         }
 
+        [HttpGet("token/{username}/{password}")]
+        [AllowAnonymous]
+        public async Task<ActionResult> GetTokenForMobileAppAsync(String username, String password)
+        {
+            Console.WriteLine("username: " + username);
+            Console.WriteLine("password: " + password);
+            // Call API to get the token
+            var apiClientCredentials = new PasswordTokenRequest
+            {
+                Address = "http://192.168.132.1:5000/connect/token",
 
+                ClientId = "ro.client",
+                ClientSecret = "secret",
+                // This is the scope our Protected API requires. 
+                Scope = "doctalk_auth_api",
+                UserName = username,
+                Password = password
+            };
+
+            var client = new HttpClient();
+
+            // 1. Authenticates and get an access token from Identity Server
+            var tokenResponse = await client.RequestPasswordTokenAsync(apiClientCredentials);
+            var result_token = tokenResponse.Json;
+            if (tokenResponse.IsError)
+            {
+                Console.WriteLine("Cannot get the data");
+                return StatusCode(500);
+            }
+
+            return Ok(result_token);
+        }
     }
 }

@@ -55,50 +55,73 @@ namespace DocTalk_Dev_Auth
                     AllowedScopes = { "doctalk_auth_api" }
                 },
 
+                new Client
+                {
+                    ClientId = "doctalk_android",
+                    ClientName = "DocTalk Identity Server for Android Application",
+                    AllowedGrantTypes = GrantTypes.Code,
+                    RequirePkce = true,
+                    RequireConsent = false,
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+                    RefreshTokenUsage = TokenUsage.ReUse,
+                    RedirectUris = { "gclprojects.chunlin.myapp:/oauth2callback" },
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.Email,
+                        IdentityServerConstants.StandardScopes.OfflineAccess
+                    },
+                    AllowOfflineAccess = true
+                },
+
                 // OpenID Connect hybrid flow client (MVC)
-            new Client
-            {
-                ClientId = "mvc",
-                ClientName = "MVC Client",
-                AllowedGrantTypes = GrantTypes.Hybrid,
-
-                ClientSecrets =
+                new Client
                 {
-                    new Secret("secret".Sha256())
+                    ClientId = "mvc",
+                    ClientName = "MVC Client",
+                    AllowedGrantTypes = GrantTypes.Hybrid,
+
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+
+                    RedirectUris           = { "http://localhost:5002/signin-oidc" },
+                    PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
+
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "doctalk_auth_api"
+                    },
+
+                    AllowOfflineAccess = true
                 },
-
-                RedirectUris           = { "http://localhost:5002/signin-oidc" },
-                PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
-
-                AllowedScopes =
+                // JavaScript Client
+                new Client
                 {
-                    IdentityServerConstants.StandardScopes.OpenId,
-                    IdentityServerConstants.StandardScopes.Profile,
-                    "doctalk_auth_api"
-                },
+                    ClientId = "js",
+                    ClientName = "JavaScript Client",
+                    AllowedGrantTypes = GrantTypes.Code,
+                    RequirePkce = true,
+                    RequireClientSecret = false,
 
-                AllowOfflineAccess = true
-            },
-            // JavaScript Client
-            new Client
-            {
-                ClientId = "js",
-                ClientName = "JavaScript Client",
-                AllowedGrantTypes = GrantTypes.Code,
-                RequirePkce = true,
-                RequireClientSecret = false,
+                    RedirectUris =           { "http://localhost:5003/callback.html" },
+                    PostLogoutRedirectUris = { "http://localhost:5003/index.html" },
+                    AllowedCorsOrigins =     { "http://localhost:5003" },
 
-                RedirectUris =           { "http://localhost:5003/callback.html" },
-                PostLogoutRedirectUris = { "http://localhost:5003/index.html" },
-                AllowedCorsOrigins =     { "http://localhost:5003" },
-
-                AllowedScopes =
-                {
-                    IdentityServerConstants.StandardScopes.OpenId,
-                    IdentityServerConstants.StandardScopes.Profile,
-                    "doctalk_auth_api"
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "doctalk_auth_api"
+                    }
                 }
-            }
             };
         }
     }

@@ -9,11 +9,11 @@ namespace DocTalk_Dev_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ValuesController : ControllerBase
     {
         // GET api/values
         [HttpGet]
-        [Authorize]
         public ActionResult<IEnumerable<string>> Get()
         {
             return new string[] { "value1", "value2" };
@@ -30,6 +30,7 @@ namespace DocTalk_Dev_API.Controllers
         [HttpPost]
         public void Post([FromBody] string value)
         {
+            Console.WriteLine("value: " + value);
         }
 
         // PUT api/values/5

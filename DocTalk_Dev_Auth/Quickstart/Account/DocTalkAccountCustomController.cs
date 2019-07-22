@@ -32,9 +32,13 @@ namespace DocTalk_Dev_Auth.Quickstart.Account
             {
                 return BadRequest(ModelState);
             }
+            if(model.Password != model.ConfirmPassword)
+            {
+                return BadRequest(ModelState);
+            }
 
             string role = "Patient";
-            var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, PhoneNumber = model.PhoneNumber };
+            var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, PhoneNumber = model.PhoneNumber, PhoneNumberConfirmed=true};
             var result = await _userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
             {

@@ -20,7 +20,8 @@ namespace DocTalk_Dev_Auth
             var seed = args.Any(x => x == "/seed");
             if (seed) args = args.Except(new[] { "/seed" }).ToArray();
 
-            var host = CreateWebHostBuilder(args).Build();
+            var host = CreateWebHostBuilder(args)
+                        .UseUrls("http://192.168.132.1:5000").Build();
 
             if (seed)
             {
