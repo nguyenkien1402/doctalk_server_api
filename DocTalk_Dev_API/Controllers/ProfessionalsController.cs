@@ -10,9 +10,8 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace DocTalk_Dev_API.Controllers
 {
-    [Route("api/professional")]
+    [Route("api/professionals")]
     [ApiController]
-    [Authorize]
     public class ProfessionalsController : ControllerBase
     {
         private readonly DocTalkDevContext _context;

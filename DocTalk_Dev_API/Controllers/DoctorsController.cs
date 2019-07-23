@@ -9,7 +9,7 @@ using DocTalk_Dev_API.Models;
 
 namespace DocTalk_Dev_API.Controllers
 {
-    [Route("api/doctors/")]
+    [Route("api/doctors")]
     [ApiController]
     public class DoctorsController : Controller
     {
@@ -25,6 +25,13 @@ namespace DocTalk_Dev_API.Controllers
         public async Task<ActionResult<IEnumerable<Doctor>>> GetDoctor()
         {
             return await _context.Doctor.ToListAsync();
+        }
+
+        [HttpGet("/userId/{userId}")]
+        public ActionResult GetDoctorInfoByUserId(string userId)
+        {
+            var doctor = _context.Doctor.First(d => d.UserId == userId);
+            return Ok(doctor);
         }
 
         // GET: api/Doctors/5

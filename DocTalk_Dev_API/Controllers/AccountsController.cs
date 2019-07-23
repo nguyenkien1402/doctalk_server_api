@@ -75,6 +75,7 @@ namespace DocTalk_Dev_API.Controllers
             var result = new
             {
                 Meta = new { Status = "OK", Message = "Register as A Doctor" },
+                DoctorId = doctor.Id,
                 Doctor = model
             };
             return Ok(result);

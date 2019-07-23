@@ -3526,3 +3526,10 @@ Parameter name: password
 2019-07-23 15:44:37.433 +10:00 [DBG] Scopes in access token: openid profile doctalk_auth_api
 2019-07-23 15:44:37.525 +10:00 [INF] Profile service returned the following claim types: sub preferred_username name
 2019-07-23 15:44:37.527 +10:00 [DBG] End userinfo request
+2019-07-23 20:27:27.701 +10:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-07-23 20:27:27.751 +10:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-07-23 20:27:27.756 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-07-23 20:27:27.756 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-07-23 20:27:27.757 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-07-23 20:27:27.758 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-07-23 20:27:27.758 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
