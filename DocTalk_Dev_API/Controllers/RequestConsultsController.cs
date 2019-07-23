@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DocTalk_Dev_API.Models;
 using Microsoft.AspNetCore.Authorization;
+using DocTalk_Dev_API.Views;
 
 namespace DocTalk_Dev_API.Controllers
 {
@@ -23,23 +24,43 @@ namespace DocTalk_Dev_API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> RequestConsultSession(RequestConsult model)
+        public async Task<ActionResult> RequestConsultSession([FromBody]RequestConsultView model)
         {
+            // Save the RequestConsult First
+            var requestConsult = new RequestConsult
+            {
+                BriefOverview = model.BriefOverview,
+                Inquiry = model.Inquiry,
+                Specification = model.Specification,    
+                Urgent = model.Urgent,
+                PatientId = model.PatientId
+            };
+            //await _context.RequestConsult.AddAsync(requestConsult);
+            var requestConsultDocument = from document in model.RequestConsultDocument
+                                         select new RequestConsultDocument
+                                         {
+                                             DocumentName = document.DocumentName,
+                                             DocumentLink = document.DocumentLink,
+                                             DocumentType = document.DocumentType
+                                         };
+            requestConsult.RequestConsultDocument = requestConsultDocument.ToList();
+            await _context.RequestConsult.AddAsync(requestConsult);
+            await _context.SaveChangesAsync();
             try
             {
-                _context.RequestConsult.Add(model);
-                await _context.SaveChangesAsync();
-                var resul = new
+                var result = new
                 {
-                    meta = new { status = "OK", Message = "Post Question Successfully " },
-                    data = model
+                    status = "OK",
+                    RequestId = requestConsult.Id,
+                    Model = model
                 };
-                return Ok(model);
+                return Ok(result);
             }catch(Exception e)
             {
                 Console.WriteLine(e.Message);
                 return BadRequest();
             }
+            
         }
 
         [HttpGet("searchingdoctor/{requestid}")]

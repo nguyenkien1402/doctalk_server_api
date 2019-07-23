@@ -31,6 +31,7 @@ namespace DocTalk_Dev_API.Models
         public virtual DbSet<Professional> Professional { get; set; }
         public virtual DbSet<RequestCancellation> RequestCancellation { get; set; }
         public virtual DbSet<RequestConsult> RequestConsult { get; set; }
+        public virtual DbSet<RequestConsultDocument> RequestConsultDocument { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -342,6 +343,23 @@ namespace DocTalk_Dev_API.Models
                     .HasForeignKey(d => d.PatientId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__RequestCo__Patie__5AEE82B9");
+            });
+
+            modelBuilder.Entity<RequestConsultDocument>(entity =>
+            {
+                entity.Property(e => e.DocumentLink).IsRequired();
+
+                entity.Property(e => e.DocumentName).HasMaxLength(450);
+
+                entity.Property(e => e.DocumentType)
+                    .IsRequired()
+                    .HasMaxLength(450);
+
+                entity.HasOne(d => d.RequestConsult)
+                    .WithMany(p => p.RequestConsultDocument)
+                    .HasForeignKey(d => d.RequestConsultId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__RequestCo__Reque__02FC7413");
             });
         }
     }

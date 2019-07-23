@@ -9,7 +9,7 @@ using DocTalk_Dev_API.Models;
 
 namespace DocTalk_Dev_API.Controllers
 {
-    [Route("api/doctors")]
+    [Route("api/doctors/")]
     [ApiController]
     public class DoctorsController : Controller
     {

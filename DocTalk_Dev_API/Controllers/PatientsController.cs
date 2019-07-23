@@ -6,18 +6,27 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DocTalk_Dev_API.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DocTalk_Dev_API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/patients/")]
     [ApiController]
-    public class PatientsController : ControllerBase
+    [Authorize]
+    public class PatientsController : Controller
     {
         private readonly DocTalkDevContext _context;
 
         public PatientsController(DocTalkDevContext context)
         {
             _context = context;
+        }
+
+        [HttpGet("userId/{userId}")]
+        public ActionResult GetPatientByUserId(string userId)
+        {
+            var patient = _context.Patient.First(p => p.UserId == userId);
+            return Ok(patient);
         }
 
         // GET: api/Patients

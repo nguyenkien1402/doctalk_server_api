@@ -109,8 +109,8 @@ namespace DocTalk_Dev_API.Controllers
                 PreferName = model.PreferName,
                 PostCode = model.PostCode,
                 Suburb = model.Suburb,
-                Pstate = model.Pstate,
-                User = user
+                Pstate = model.Pstate
+                //User = user
             };
             try
             {
@@ -123,6 +123,7 @@ namespace DocTalk_Dev_API.Controllers
             }
             
             var result = new { Meta = new { Status = "OK", Message = "Register as A Patient" },
+                                PatientId = patient.Id,
                                 Patient = model};
             return Ok(result);
         }
@@ -153,8 +154,7 @@ namespace DocTalk_Dev_API.Controllers
 
             var result = new
             {
-                Meta = new { Status = "OK", Message = "Add Professioanl Successfully" },
-                Data = model
+                Meta = new { Status = "OK", Message = "Add Professioanl Successfully" }
             };
             return Ok(result);
         }
@@ -173,7 +173,7 @@ namespace DocTalk_Dev_API.Controllers
                 ClientId = "ro.client",
                 ClientSecret = "secret",
                 // This is the scope our Protected API requires. 
-                Scope = "doctalk_auth_api",
+                Scope = "openid profile doctalk_auth_api",
                 UserName = username,
                 Password = password
             };

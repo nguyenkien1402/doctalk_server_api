@@ -9,6 +9,7 @@ namespace DocTalk_Dev_API.Models
         {
             ConsultSession = new HashSet<ConsultSession>();
             RequestCancellation = new HashSet<RequestCancellation>();
+            RequestConsultDocument = new HashSet<RequestConsultDocument>();
         }
 
         public int Id { get; set; }
@@ -22,5 +23,6 @@ namespace DocTalk_Dev_API.Models
         public virtual Patient Patient { get; set; }
         public virtual ICollection<ConsultSession> ConsultSession { get; set; }
         public virtual ICollection<RequestCancellation> RequestCancellation { get; set; }
+        public virtual ICollection<RequestConsultDocument> RequestConsultDocument { get; set; }
     }
 }

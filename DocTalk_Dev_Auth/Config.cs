@@ -52,7 +52,15 @@ namespace DocTalk_Dev_Auth
 
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                     ClientSecrets = {new Secret("secret".Sha256())},
-                    AllowedScopes = { "doctalk_auth_api" }
+                    AllowedScopes = {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "doctalk_auth_api"},
+
+                    AccessTokenLifetime = 3600*24*365,
+                    AuthorizationCodeLifetime = 3600*24*365,
+                    AlwaysIncludeUserClaimsInIdToken = true,
+
                 },
 
                 new Client
@@ -75,7 +83,7 @@ namespace DocTalk_Dev_Auth
                         IdentityServerConstants.StandardScopes.Email,
                         IdentityServerConstants.StandardScopes.OfflineAccess
                     },
-                    AllowOfflineAccess = true
+                    AllowOfflineAccess = true,
                 },
 
                 // OpenID Connect hybrid flow client (MVC)
