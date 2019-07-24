@@ -129,36 +129,7 @@ namespace DocTalk_Dev_API.Controllers
             return Ok(result);
         }
 
-        [HttpPost]
-        [Route("addprofessional/")]
-        public ActionResult AddProfessional([FromBody]DoctorProfessionalView model)
-        {
-            try
-            {
-                foreach (int professId in model.ProfessionalId)
-                {
-                    if(_context.DoctorProfessional.Where(dp => dp.DoctorId == model.DoctorId && dp.ProfessionalId == professId).Count() == 0)
-                    {
-                        DoctorProfessional doctorProfessional = new DoctorProfessional { DoctorId = model.DoctorId, ProfessionalId = professId };
-                        _context.DoctorProfessional.Add(doctorProfessional);
-                    }
-                    else
-                    {
-                        Console.WriteLine("The doctor already have this professional - exist: " + professId);
-                    }   
-                }
-                _context.SaveChanges();
-            }catch(Exception e)
-            {
-                return Conflict();
-            }
-
-            var result = new
-            {
-                Meta = new { Status = "OK", Message = "Add Professioanl Successfully" }
-            };
-            return Ok(result);
-        }
+        
 
         [HttpGet("token/{username}/{password}")]
         [AllowAnonymous]
@@ -174,7 +145,7 @@ namespace DocTalk_Dev_API.Controllers
                 ClientId = "ro.client",
                 ClientSecret = "secret",
                 // This is the scope our Protected API requires. 
-                Scope = "openid profile doctalk_auth_api",
+                Scope = "openid email profile doctalk_auth_api",
                 UserName = username,
                 Password = password
             };

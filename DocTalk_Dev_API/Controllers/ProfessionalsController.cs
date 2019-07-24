@@ -7,12 +7,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DocTalk_Dev_API.Models;
 using Microsoft.AspNetCore.Authorization;
+using DocTalk_Dev_API.Views;
 
 namespace DocTalk_Dev_API.Controllers
 {
-    [Route("api/professionals")]
+    [Route("api/professionals/")]
     [ApiController]
-    public class ProfessionalsController : ControllerBase
+    [Authorize]
+    public class ProfessionalsController : Controller
     {
         private readonly DocTalkDevContext _context;
 
@@ -21,8 +23,43 @@ namespace DocTalk_Dev_API.Controllers
             _context = context;
         }
 
+        [HttpPost("doctor/addpro")]
+        //[Route]
+        public ActionResult AddProfessional([FromBody]DoctorProfessionalView model)
+        {
+            Console.WriteLine("Call function");
+            Console.WriteLine("Model: " + model.DoctorId);
+            try
+            {
+                foreach (int professId in model.ProfessionalId)
+                {
+                    if (_context.DoctorProfessional.Where(dp => dp.DoctorId == model.DoctorId && dp.ProfessionalId == professId).Count() == 0)
+                    {
+                        DoctorProfessional doctorProfessional = new DoctorProfessional { DoctorId = model.DoctorId, ProfessionalId = professId };
+                        _context.DoctorProfessional.Add(doctorProfessional);
+                    }
+                    else
+                    {
+                        Console.WriteLine("The doctor already have this professional - exist: " + professId);
+                    }
+                }
+                _context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                return Conflict();
+            }
+
+            var result = new
+            {
+                Meta = new { Status = "OK", Message = "Add Professioanl Successfully" }
+            };
+            return Ok(result);
+        }
+
         // GET: api/Professionals
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<Professional>>> GetProfessional()
         {
             return await _context.Professional.ToListAsync();

@@ -16,6 +16,7 @@ namespace DocTalk_Dev_Auth
             {
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
+                new IdentityResources.Email(),
             };
         }
 
@@ -54,6 +55,7 @@ namespace DocTalk_Dev_Auth
                     ClientSecrets = {new Secret("secret".Sha256())},
                     AllowedScopes = {
                         IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Email,
                         IdentityServerConstants.StandardScopes.Profile,
                         "doctalk_auth_api"},
 
