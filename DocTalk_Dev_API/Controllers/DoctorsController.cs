@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DocTalk_Dev_API.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DocTalk_Dev_API.Controllers
 {
     [Route("api/doctors")]
     [ApiController]
+    [Authorize]
     public class DoctorsController : Controller
     {
         private readonly DocTalkDevContext _context;
@@ -27,11 +29,15 @@ namespace DocTalk_Dev_API.Controllers
             return await _context.Doctor.ToListAsync();
         }
 
-        [HttpGet("/userId/{userId}")]
+        [HttpGet("userId/{userId}")]
         public ActionResult GetDoctorInfoByUserId(string userId)
         {
-            var doctor = _context.Doctor.First(d => d.UserId == userId);
-            return Ok(doctor);
+            var doctor = _context.Doctor.Where(d => d.UserId == userId);
+            if(doctor != null)
+            {
+                return Ok(doctor.FirstOrDefault());
+            }
+            return NotFound();
         }
 
         // GET: api/Doctors/5

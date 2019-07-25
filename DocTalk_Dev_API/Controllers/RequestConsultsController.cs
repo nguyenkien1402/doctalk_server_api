@@ -51,8 +51,8 @@ namespace DocTalk_Dev_API.Controllers
                 var result = new
                 {
                     status = "OK",
-                    RequestId = requestConsult.Id,
-                    Model = model
+                    RequestId = requestConsult.Id
+                    //Model = model
                 };
                 return Ok(result);
             }catch(Exception e)

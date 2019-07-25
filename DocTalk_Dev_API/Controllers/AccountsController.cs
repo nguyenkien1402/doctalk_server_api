@@ -135,8 +135,13 @@ namespace DocTalk_Dev_API.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> GetTokenForMobileAppAsync(String username, String password)
         {
-            Console.WriteLine("username: " + username);
-            Console.WriteLine("password: " + password);
+            Boolean isDoctor = false;
+            AspNetUsers user = _context.AspNetUsers.Where(a => a.UserName == username).FirstOrDefault();
+            //Get userID first.
+            if (user != null)
+            {
+                isDoctor = true;
+            }
             // Call API to get the token
             var apiClientCredentials = new PasswordTokenRequest
             {
@@ -155,6 +160,66 @@ namespace DocTalk_Dev_API.Controllers
             // 1. Authenticates and get an access token from Identity Server
             var tokenResponse = await client.RequestPasswordTokenAsync(apiClientCredentials);
             var result_token = tokenResponse.Json;
+            result_token.Add("isDoctor", isDoctor);
+            if (tokenResponse.IsError)
+            {
+                Console.WriteLine("Cannot get the data");
+                return StatusCode(500);
+            }
+
+            return Ok(result_token);
+        }
+
+        [HttpGet("doctor/token/{username}/{password}")]
+        [AllowAnonymous]
+        public async Task<ActionResult> GetTokenForDoctorMobileAppAsync(String username, String password)
+        {
+            // Check if user is doctor
+            Boolean isDoctor = false;
+            AspNetUsers user = _context.AspNetUsers.Where(a => a.UserName == username).FirstOrDefault();
+            //Get userID first.
+            if (user != null)
+            {
+                // Check if user is doctor
+                Doctor doctor = _context.Doctor.Where(d => d.UserId == user.Id).FirstOrDefault();
+                if (doctor != null)
+                {
+                    if (doctor.ConfirmDoctor == true)
+                    {
+                        isDoctor = true;
+                    }
+                    else
+                    {
+                        var result = new { status = "Bad Request", message = "Doctor has not activated yet" };
+                        return BadRequest(result);
+                    }
+                }
+            }
+            else
+            {
+                var result = new { status = "Bad Request", message = "Incorrect Username" };
+                return NotFound(result);
+            }
+
+            // Call API to get the token
+            var apiClientCredentials = new PasswordTokenRequest
+            {
+                Address = "http://192.168.132.1:5000/connect/token",
+
+                ClientId = "ro.client",
+                ClientSecret = "secret",
+                // This is the scope our Protected API requires. 
+                Scope = "openid email profile doctalk_auth_api",
+                UserName = username,
+                Password = password
+            };
+
+            var client = new HttpClient();
+
+            // 1. Authenticates and get an access token from Identity Server
+            var tokenResponse = await client.RequestPasswordTokenAsync(apiClientCredentials);
+            var result_token = tokenResponse.Json;
+            result_token.Add("isDoctor", isDoctor);
             if (tokenResponse.IsError)
             {
                 Console.WriteLine("Cannot get the data");

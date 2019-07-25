@@ -23,12 +23,10 @@ namespace DocTalk_Dev_API.Controllers
             _context = context;
         }
 
-        [HttpPost("doctor/addpro")]
-        //[Route]
+        [HttpPost]
+        [Route("doctor/addpro")]
         public ActionResult AddProfessional([FromBody]DoctorProfessionalView model)
         {
-            Console.WriteLine("Call function");
-            Console.WriteLine("Model: " + model.DoctorId);
             try
             {
                 foreach (int professId in model.ProfessionalId)

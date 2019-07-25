@@ -68,10 +68,8 @@ namespace DocTalk_Dev_API.Controllers
             else
             {
                 var result = new { status = "Bad", message = "Incorrect doctorID" };
-                return View(result);
+                return BadRequest(result);
             }
-            
-            
         }
 
         [HttpGet]
