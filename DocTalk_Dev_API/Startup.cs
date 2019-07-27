@@ -40,6 +40,7 @@ namespace DocTalk_Dev_API
             services.AddDbContext<DocTalkDevContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddHttpClient();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

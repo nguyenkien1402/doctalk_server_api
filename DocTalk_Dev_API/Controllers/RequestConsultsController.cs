@@ -8,6 +8,10 @@ using Microsoft.EntityFrameworkCore;
 using DocTalk_Dev_API.Models;
 using Microsoft.AspNetCore.Authorization;
 using DocTalk_Dev_API.Views;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Text;
+using System.Net;
 
 namespace DocTalk_Dev_API.Controllers
 {
@@ -17,10 +21,12 @@ namespace DocTalk_Dev_API.Controllers
     public class RequestConsultsController : Controller
     {
         private readonly DocTalkDevContext _context;
+        private readonly IHttpClientFactory _clientFactory;
 
-        public RequestConsultsController(DocTalkDevContext context)
+        public RequestConsultsController(DocTalkDevContext context, IHttpClientFactory clientFactory)
         {
             _context = context;
+            _clientFactory = clientFactory;
         }
 
         [HttpPost]
@@ -61,6 +67,54 @@ namespace DocTalk_Dev_API.Controllers
                 return BadRequest();
             }
             
+        }
+
+        public async Task<String> RequestDoctor()
+        {
+            var request = new HttpRequestMessage(HttpMethod.Post,
+                "https://fcm.googleapis.com/fcm/send");
+                /*Headers = {
+                    { HttpRequestHeader.Authorization.ToString(), "key=AAAAST4PGVw:APA91bHGopJqbpePv79V5qiClVfF4PIm6N0s09MN889BqlfgfXvCQfkO4sSTyeyP0Yr5WCvftz7ftqqoJSJ2SwGS_d44-Rw01PtIqJnuL-p_6oXqY1uKUbffixfXsZiBtbRmn7Do7V2u" },
+                    { HttpRequestHeader.ContentType.ToString(), "application/json" },
+                }*/
+            
+
+            var content = new {
+                data = new {
+                    title = "Hey",
+                    content = "Check Out This Awesome Game!",
+                    imageUrl = "http://h5.4j.com/thumb/Ninja-Run.jpg",
+                    gameUrl = "https://h5.4j.com/Ninja-Run/index.php?pubid=noa"
+                },
+                to = "/topics/all"
+            };
+            var json = JsonConvert.SerializeObject(content);
+            var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
+            request.Content = stringContent;
+
+            var client = _clientFactory.CreateClient();
+            client.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", "key=AAAAST4PGVw:APA91bHGopJqbpePv79V5qiClVfF4PIm6N0s09MN889BqlfgfXvCQfkO4sSTyeyP0Yr5WCvftz7ftqqoJSJ2SwGS_d44-Rw01PtIqJnuL-p_6oXqY1uKUbffixfXsZiBtbRmn7Do7V2u");
+            client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json");
+            client.DefaultRequestHeaders.TryAddWithoutValidation("Accept", "application/json");
+            var response = await client.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Post Noti Ok");
+                return "It is Ok bro";
+            }
+            else
+            {
+                Console.WriteLine("Failed to Post Noti");
+                return "Not good bro";
+            }
+        }
+
+        [HttpGet("requestdoctor")]
+        public async Task<ActionResult> GetRequestDoctor()
+        {
+            var s = await RequestDoctor();
+            Console.WriteLine("s"+s);
+            return Ok(s);
         }
 
         [HttpGet("searchingdoctor/{requestid}")]
