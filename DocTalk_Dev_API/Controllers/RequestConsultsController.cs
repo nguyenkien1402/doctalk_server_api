@@ -12,6 +12,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using System.Text;
 using System.Net;
+using Microsoft.AspNetCore.SignalR;
 
 namespace DocTalk_Dev_API.Controllers
 {
@@ -19,7 +20,7 @@ namespace DocTalk_Dev_API.Controllers
     [ApiController]
     [Authorize]
     public class RequestConsultsController : Controller
-    {
+    { 
         private readonly DocTalkDevContext _context;
         private readonly IHttpClientFactory _clientFactory;
 
@@ -69,25 +70,51 @@ namespace DocTalk_Dev_API.Controllers
             
         }
 
-        public async Task<String> RequestDoctor()
+        [HttpGet("simpletest")]
+        public void Test()
         {
-            var request = new HttpRequestMessage(HttpMethod.Post,
-                "https://fcm.googleapis.com/fcm/send");
-                /*Headers = {
-                    { HttpRequestHeader.Authorization.ToString(), "key=AAAAST4PGVw:APA91bHGopJqbpePv79V5qiClVfF4PIm6N0s09MN889BqlfgfXvCQfkO4sSTyeyP0Yr5WCvftz7ftqqoJSJ2SwGS_d44-Rw01PtIqJnuL-p_6oXqY1uKUbffixfXsZiBtbRmn7Do7V2u" },
-                    { HttpRequestHeader.ContentType.ToString(), "application/json" },
-                }*/
-            
-
-            var content = new {
-                data = new {
+            List<int> result = new List<int>();
+            for(int i = 0; i < 10; i++)
+            {
+                result.Add(i);
+            }
+            var content = new
+            {
+                data = new
+                {
                     title = "Hey",
                     content = "Check Out This Awesome Game!",
                     imageUrl = "http://h5.4j.com/thumb/Ninja-Run.jpg",
-                    gameUrl = "https://h5.4j.com/Ninja-Run/index.php?pubid=noa"
+                    gameUrl = "https://h5.4j.com/Ninja-Run/index.php?pubid=noa",
+                    userId = result
                 },
                 to = "/topics/all"
             };
+
+            var json = JsonConvert.SerializeObject(content);
+            var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
+            Console.WriteLine("JSON: " + json);
+
+        }
+
+        public async Task<Boolean> SendNotification(List<String> userIds, int requestId)
+        {
+            Console.WriteLine("UserId", userIds);
+            var request = new HttpRequestMessage(HttpMethod.Post,
+                "https://fcm.googleapis.com/fcm/send");
+
+            var content = new {
+                data = new {
+                    id = requestId,
+                    title = "Hey",
+                    content = "Check Out This Awesome Game!",
+                    imageUrl = "http://h5.4j.com/thumb/Ninja-Run.jpg",
+                    gameUrl = "https://h5.4j.com/Ninja-Run/index.php?pubid=noa",
+                    userId = userIds
+                },
+                to = "/topics/doctor_"+ userIds[0]
+            };
+
             var json = JsonConvert.SerializeObject(content);
             var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
             request.Content = stringContent;
@@ -99,28 +126,18 @@ namespace DocTalk_Dev_API.Controllers
             var response = await client.SendAsync(request);
             if (response.IsSuccessStatusCode)
             {
-                Console.WriteLine("Post Noti Ok");
-                return "It is Ok bro";
+                return true;
             }
             else
             {
-                Console.WriteLine("Failed to Post Noti");
-                return "Not good bro";
+                return false;
             }
         }
 
-        [HttpGet("requestdoctor")]
-        public async Task<ActionResult> GetRequestDoctor()
-        {
-            var s = await RequestDoctor();
-            Console.WriteLine("s"+s);
-            return Ok(s);
-        }
 
-        [HttpGet("searchingdoctor/{requestid}")]
+        [HttpGet("searchingdoctor/{requestId}")]
         public async Task<ActionResult> SearchingDoctor(int requestId)
         {
-
             if (_context.RequestConsult.Find(requestId) == null)
             {
                 return BadRequest();
@@ -139,11 +156,16 @@ namespace DocTalk_Dev_API.Controllers
             }
             var potentialDoctors = _context.DoctorProfessional.Where(p => professionalsId.Contains(p.ProfessionalId))
                                             .Include(p => p.Doctor);
-            List<int> doctorsId = new List<int>();
-            foreach(var doctor in potentialDoctors)
+            ;
+            var doctorsId = new List<int>();
+            foreach(var p in potentialDoctors)
             {
-                Console.WriteLine("Doctor ID: " + doctor.DoctorId);
-                doctorsId.Add(doctor.DoctorId);
+                if (!doctorsId.Contains(p.DoctorId))
+                {
+                    Console.WriteLine("DoctorId: " + p.DoctorId);
+                    doctorsId.Add(p.DoctorId);
+                }
+                
             }
             // Find all the potential doctors with activate status
             var activateDoctors = _context.DoctorActivate.Where(p => p.Activate == true && doctorsId.Contains(p.DoctorId))
@@ -154,41 +176,41 @@ namespace DocTalk_Dev_API.Controllers
                 Console.WriteLine("doctor id: " + doctor.DoctorId);
             }
             List<DoctorActivate> listActivateDoctors = activateDoctors.ToList();
+            List<Doctor> listDoctors = new List<Doctor>();
+            foreach(DoctorActivate da in listActivateDoctors)
+            {
+                listDoctors.Add(da.Doctor);
+            }
             // Then choose a doctor base on few condition.
             // And return the value of few doctor will reponse for the question
             // Transfer the question to the first priority doctor
-            // If the doctor doesn't reponse in a neat of time, then redirect the question to another doctor.
-            Doctor sendBackDoctor = null;
-            bool isDoctorOk = false;
-            while(listActivateDoctors.Count() > 0)
+            // If the doctor doesn't reponse in a neat of time, then redirect the question to another doctor. ( This will be done in the doctorapp )
+            // Sort List of doctor to get the best match the doctor at first, second match later.
+            // ***** List<Doctor> selectedDoctors = GetTheBestMatchDoctor(listDoctors); ****//
+            // Then get the UserId of doctor to send push notification
+            List<String> userIds = new List<String>();
+            foreach(Doctor d in listDoctors)
             {
-                // Choose a doctor base on condition
-                //**** Doctor selectedDoctor = SelectedDoctor(activateDoctors) ****//
-                // But for now, we are going to use the random number
-                Random r = new Random();
-                int indexDoctors = r.Next(0, listActivateDoctors.Count());
-                sendBackDoctor = listActivateDoctors.ElementAt(indexDoctors).Doctor;
-                // Remove the current doctor our of the list
-                listActivateDoctors.RemoveAt(indexDoctors);
-                // Simultaneously justtify the doctor
-                //**** Justify the doctor ****//
-                // Send detail information to Doctor
-                //**** isDoctorOk = SendRequestDetailDoctor(requestID, selectedDoctor) ****//
-                // if isDoctor ok, then break the loop and send detail of doctor to user
-                break;
+                userIds.Add(d.UserId);
             }
-            if(isDoctorOk == true && sendBackDoctor != null)
+            var isFirstSendOk = false;
+            isFirstSendOk = await SendNotification(userIds, requestId);
+            if(isFirstSendOk)
             {
-                return Ok(sendBackDoctor);
+                var resultOk = new { status = "OK", message = "Finding the doctor" };
+                return Ok(resultOk);
+            }
+            else
+            {
+                var resultNotOk = new
+                {
+                    status = "NOTFOUND",
+                    request = request.ToString(),
+                    message = "Could not find the doctor for the requirement"
+                };
+                return NotFound(resultNotOk);
             }
 
-            var resultNotOk = new
-            {
-                meta = new { status = "NOTFOUND", message = "Could not find the doctor" },
-                request = request.ToString(),
-                message = "Could not find the doctor for the requirement"
-            };
-            return View(resultNotOk);
         }
 
 

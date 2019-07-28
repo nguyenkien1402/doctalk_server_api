@@ -14,6 +14,7 @@ using DocTalk_Dev_API.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using IdentityServer4;
+using DocTalk_Dev_API.Hubs;
 
 namespace DocTalk_Dev_API
 {
@@ -41,7 +42,10 @@ namespace DocTalk_Dev_API
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddHttpClient();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,6 +64,11 @@ namespace DocTalk_Dev_API
             app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseMvc();
+
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<SearchingDoctorHub>("/searchingdoctorhub");
+            });
         }
     }
 }
