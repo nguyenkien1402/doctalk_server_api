@@ -134,8 +134,80 @@ namespace DocTalk_Dev_API.Controllers
             }
         }
 
-
         [HttpGet("searchingdoctor/{requestId}")]
+        public async Task<ActionResult> SearchingDoctor(int requestId)
+        {
+            if (_context.RequestConsult.Find(requestId) == null)
+            {
+                return BadRequest();
+            }
+            var request = _context.RequestConsult.Find(requestId);
+            List<string> specifications = request.Specification.Split(",").ToList();
+            // Find all the needed specifications
+            var professional_list = _context.Professional.Where(p => specifications.Contains(p.Code));
+
+            // Find all the potential doctors
+            List<int> professionalsId = new List<int>();
+            foreach (var profess in professional_list)
+            {
+                Console.WriteLine("Profess ID:" + profess.Id);
+                professionalsId.Add(profess.Id);
+            }
+            var potentialDoctors = _context.DoctorProfessional.Where(p => professionalsId.Contains(p.ProfessionalId))
+                                            .Include(p => p.Doctor);
+            ;
+            var doctorsId = new List<int>();
+            foreach (var p in potentialDoctors)
+            {
+                if (!doctorsId.Contains(p.DoctorId))
+                {
+                    Console.WriteLine("DoctorId: " + p.DoctorId);
+                    doctorsId.Add(p.DoctorId);
+                }
+
+            }
+            // Find all the potential doctors with activate status
+            var activateDoctors = _context.DoctorActivate.Where(p => p.Activate == true && doctorsId.Contains(p.DoctorId))
+                                                            .Include(p => p.Doctor);
+
+            foreach (var doctor in activateDoctors)
+            {
+                Console.WriteLine("doctor id: " + doctor.DoctorId);
+            }
+            List<DoctorActivate> listActivateDoctors = activateDoctors.ToList();
+            List<Doctor> listDoctors = new List<Doctor>();
+            foreach (DoctorActivate da in listActivateDoctors)
+            {
+                listDoctors.Add(new Doctor
+                {
+                    Id = da.Doctor.Id,
+                    FirstName = da.Doctor.FirstName,
+                    LastName = da.Doctor.LastName,
+                    PreferName = da.Doctor.PreferName,
+                    JoinedDate = da.Doctor.JoinedDate,
+                    UserId = da.Doctor.UserId
+                });
+            }
+            // Then choose a doctor base on few condition.
+            // And return the value of few doctor will reponse for the question
+            // Transfer the question to the first priority doctor
+            // If the doctor doesn't reponse in a neat of time, then redirect the question to another doctor. ( This will be done in the doctorapp )
+            // Sort List of doctor to get the best match the doctor at first, second match later.
+            // ***** List<Doctor> selectedDoctors = GetTheBestMatchDoctor(listDoctors); ****//
+            // Then get the UserId of doctor to send push notification
+            if(listDoctors.Count() > 0)
+            {
+                return Ok(listDoctors);
+            }
+            else
+            {
+                return NotFound("Not Found Any Potential Doctor");
+            }
+ 
+        }
+
+
+        /*[HttpGet("searchingdoctor/{requestId}")]
         public async Task<ActionResult> SearchingDoctor(int requestId)
         {
             if (_context.RequestConsult.Find(requestId) == null)
@@ -186,7 +258,7 @@ namespace DocTalk_Dev_API.Controllers
             // Transfer the question to the first priority doctor
             // If the doctor doesn't reponse in a neat of time, then redirect the question to another doctor. ( This will be done in the doctorapp )
             // Sort List of doctor to get the best match the doctor at first, second match later.
-            // ***** List<Doctor> selectedDoctors = GetTheBestMatchDoctor(listDoctors); ****//
+            // ***** List<Doctor> selectedDoctors = GetTheBestMatchDoctor(listDoctors); ****
             // Then get the UserId of doctor to send push notification
             List<String> userIds = new List<String>();
             foreach(Doctor d in listDoctors)
@@ -211,7 +283,7 @@ namespace DocTalk_Dev_API.Controllers
                 return NotFound(resultNotOk);
             }
 
-        }
+        }*/
 
 
         // GET: api/RequestConsults

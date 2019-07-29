@@ -49,10 +49,10 @@ namespace DocTalk_Dev_API.Hubs
         }*/
 
 
-        public async Task GettingDoctorResponse(int requestId, String patientId, String doctorId, int code)
+        public async Task GettingDoctorResponse(int requestId, string patientId, string doctorId, int code)
         {
             // code == 0 mean reject, code == 1 mean accept
-            Console.WriteLine("Call Hub: " + requestId + "/ " + patientId + "/ " + doctorId);
+            Console.WriteLine("Call Hub: " + requestId + "/ " + patientId + "/ " + doctorId +"/"+code);
             await Clients.Others.SendAsync(patientId, code+"");
         }
     }
