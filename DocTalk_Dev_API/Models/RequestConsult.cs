@@ -19,8 +19,10 @@ namespace DocTalk_Dev_API.Models
         public int? Urgent { get; set; }
         public int PatientId { get; set; }
         public string Specification { get; set; }
+        public int ProfessionalId { get; set; }
 
         public virtual Patient Patient { get; set; }
+        public virtual Professional Professional { get; set; }
         public virtual ICollection<ConsultSession> ConsultSession { get; set; }
         public virtual ICollection<RequestCancellation> RequestCancellation { get; set; }
         public virtual ICollection<RequestConsultDocument> RequestConsultDocument { get; set; }

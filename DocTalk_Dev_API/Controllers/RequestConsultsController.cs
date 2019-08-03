@@ -36,7 +36,8 @@ namespace DocTalk_Dev_API.Controllers
             // Save the RequestConsult First
             var requestConsult = new RequestConsult
             {
-                BriefOverview = model.BriefOverview,
+                BriefOverview = "Overview",
+                ProfessionalId = model.ProfessionalId,
                 Inquiry = model.Inquiry,
                 Specification = model.Specification,    
                 Urgent = model.Urgent,
@@ -137,25 +138,18 @@ namespace DocTalk_Dev_API.Controllers
         [HttpGet("searchingdoctor/{requestId}")]
         public async Task<ActionResult> SearchingDoctor(int requestId)
         {
+            Console.WriteLine("RequestID: " + requestId);
             if (_context.RequestConsult.Find(requestId) == null)
             {
                 return BadRequest();
             }
             var request = _context.RequestConsult.Find(requestId);
-            List<string> specifications = request.Specification.Split(",").ToList();
-            // Find all the needed specifications
-            var professional_list = _context.Professional.Where(p => specifications.Contains(p.Code));
 
             // Find all the potential doctors
             List<int> professionalsId = new List<int>();
-            foreach (var profess in professional_list)
-            {
-                Console.WriteLine("Profess ID:" + profess.Id);
-                professionalsId.Add(profess.Id);
-            }
+            professionalsId.Add(requestId);
             var potentialDoctors = _context.DoctorProfessional.Where(p => professionalsId.Contains(p.ProfessionalId))
                                             .Include(p => p.Doctor);
-            ;
             var doctorsId = new List<int>();
             foreach (var p in potentialDoctors)
             {
@@ -164,7 +158,6 @@ namespace DocTalk_Dev_API.Controllers
                     Console.WriteLine("DoctorId: " + p.DoctorId);
                     doctorsId.Add(p.DoctorId);
                 }
-
             }
             // Find all the potential doctors with activate status
             var activateDoctors = _context.DoctorActivate.Where(p => p.Activate == true && doctorsId.Contains(p.DoctorId))

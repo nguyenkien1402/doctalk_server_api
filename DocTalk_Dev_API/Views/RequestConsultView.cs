@@ -13,6 +13,7 @@ namespace DocTalk_Dev_API.Views
         public int? Urgent { get; set; }
         public int PatientId { get; set; }
         public string Specification { get; set; }
+        public int ProfessionalId { get; set; }
         public virtual ICollection<RequestConsultDocument> RequestConsultDocument { get; set; }
     }
 }

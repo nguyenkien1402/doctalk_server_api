@@ -8,6 +8,7 @@ namespace DocTalk_Dev_API.Models
         public Professional()
         {
             DoctorProfessional = new HashSet<DoctorProfessional>();
+            RequestConsult = new HashSet<RequestConsult>();
         }
 
         public int Id { get; set; }
@@ -16,5 +17,6 @@ namespace DocTalk_Dev_API.Models
         public string Code { get; set; }
 
         public virtual ICollection<DoctorProfessional> DoctorProfessional { get; set; }
+        public virtual ICollection<RequestConsult> RequestConsult { get; set; }
     }
 }

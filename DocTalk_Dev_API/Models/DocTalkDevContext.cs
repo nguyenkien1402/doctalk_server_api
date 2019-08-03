@@ -198,7 +198,6 @@ namespace DocTalk_Dev_API.Models
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Doctor)
                     .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Doctor__UserId__5165187F");
             });
 
@@ -243,7 +242,6 @@ namespace DocTalk_Dev_API.Models
                 entity.HasOne(d => d.Doctor)
                     .WithMany(p => p.DoctorProfessional)
                     .HasForeignKey(d => d.DoctorId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__DoctorPro__Docto__5629CD9C");
 
                 entity.HasOne(d => d.Professional)
@@ -290,7 +288,6 @@ namespace DocTalk_Dev_API.Models
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Patient)
                     .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Patient__UserId__4D94879B");
             });
 
@@ -336,6 +333,8 @@ namespace DocTalk_Dev_API.Models
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
 
+                entity.Property(e => e.ProfessionalId).HasDefaultValueSql("((1))");
+
                 entity.Property(e => e.Specification).HasMaxLength(450);
 
                 entity.HasOne(d => d.Patient)
@@ -343,6 +342,12 @@ namespace DocTalk_Dev_API.Models
                     .HasForeignKey(d => d.PatientId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__RequestCo__Patie__5AEE82B9");
+
+                entity.HasOne(d => d.Professional)
+                    .WithMany(p => p.RequestConsult)
+                    .HasForeignKey(d => d.ProfessionalId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_professional_request_consult_id");
             });
 
             modelBuilder.Entity<RequestConsultDocument>(entity =>
