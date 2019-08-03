@@ -29,17 +29,24 @@ namespace DocTalk_Dev_API.Controllers
         [HttpGet("cancelby")]
         public async Task<ActionResult> CancellationRequest(int doctorId, int requestId)
         {
-            RequestCancellation requestCancellation = new RequestCancellation { DoctorId = doctorId, RequestConsultId = requestId, Reason = "No Reason" };
-            _context.RequestCancellation.Add(requestCancellation);
-            await _context.SaveChangesAsync();
-            var result = new
+            try {
+                RequestCancellation requestCancellation = new RequestCancellation { DoctorId = doctorId, RequestConsultId = requestId, Reason = "No Reason" };
+                _context.RequestCancellation.Add(requestCancellation);
+                await _context.SaveChangesAsync();
+                var result = new
+                {
+
+                    isOk = true,
+                    docId = doctorId,
+                    reqId = requestId,
+                    reason = "No reason"
+                };
+                return Ok(result);
+            }catch(Exception e)
             {
-                status = "Ok",
-                docId = doctorId,
-                reqId = requestId,
-                reason = "No reason"
-            };
-            return Ok(result);
+                Console.WriteLine(e.Message);
+                return Conflict();
+            }
         }
 
 

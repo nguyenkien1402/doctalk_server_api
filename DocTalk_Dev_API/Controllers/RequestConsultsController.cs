@@ -98,12 +98,13 @@ namespace DocTalk_Dev_API.Controllers
 
         }
 
-        public async Task<Boolean> SendNotification(List<String> userIds, int requestId)
+        [HttpGet("testsendnotic")]
+        public async Task<Boolean> SendNotification(int requestId, string userId, string doctorId)
         {
-            Console.WriteLine("UserId", userIds);
+            Console.WriteLine("RequestId: " + requestId);
+            Console.WriteLine("UserId", userId);
             var request = new HttpRequestMessage(HttpMethod.Post,
                 "https://fcm.googleapis.com/fcm/send");
-
             var content = new {
                 data = new {
                     id = requestId,
@@ -111,9 +112,9 @@ namespace DocTalk_Dev_API.Controllers
                     content = "Check Out This Awesome Game!",
                     imageUrl = "http://h5.4j.com/thumb/Ninja-Run.jpg",
                     gameUrl = "https://h5.4j.com/Ninja-Run/index.php?pubid=noa",
-                    userId = userIds
+                    patientId = userId
                 },
-                to = "/topics/doctor_"+ userIds[0]
+                to = "/topics/doctor_" + doctorId
             };
 
             var json = JsonConvert.SerializeObject(content);

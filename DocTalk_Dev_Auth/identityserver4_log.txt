@@ -9309,3 +9309,153 @@ Parameter name: password
 2019-08-03 10:29:05.834 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
 2019-08-03 10:29:05.848 +10:00 [INF] Profile service returned the following claim types: sub preferred_username name email email_verified
 2019-08-03 10:29:05.849 +10:00 [DBG] End userinfo request
+2019-08-03 11:41:31.344 +10:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-08-03 11:41:31.394 +10:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-08-03 11:41:31.395 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-08-03 11:41:31.397 +10:00 [DBG] Start token request.
+2019-08-03 11:41:31.398 +10:00 [DBG] Start client validation
+2019-08-03 11:41:31.398 +10:00 [DBG] Start parsing Basic Authentication secret
+2019-08-03 11:41:31.399 +10:00 [DBG] Start parsing for secret in post body
+2019-08-03 11:41:31.403 +10:00 [DBG] Parser found secret: PostBodySecretParser
+2019-08-03 11:41:31.405 +10:00 [DBG] Secret id found: ro.client
+2019-08-03 11:41:31.407 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-03 11:41:31.411 +10:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-08-03 11:41:31.412 +10:00 [DBG] Client validation success
+2019-08-03 11:41:31.417 +10:00 [INF] {"ClientId":"ro.client","AuthenticationMethod":"SharedSecret","Category":"Authentication","Name":"Client Authentication Success","EventType":"Success","Id":1010,"Message":null,"ActivityId":"0HLONKNH8SHCA:00000001","TimeStamp":"2019-08-03T01:41:31.0000000Z","ProcessId":6872,"LocalIpAddress":"192.168.132.1:5000","RemoteIpAddress":"192.168.132.1","$type":"ClientAuthenticationSuccessEvent"}
+2019-08-03 11:41:31.424 +10:00 [DBG] Start token request validation
+2019-08-03 11:41:31.425 +10:00 [DBG] Start resource owner password token request validation
+2019-08-03 11:41:31.541 +10:00 [INF] Credentials validated for username: nguyenkien1402
+2019-08-03 11:41:31.548 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":"nguyenkien1402","Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLONKNH8SHCA:00000001","TimeStamp":"2019-08-03T01:41:31.0000000Z","ProcessId":6872,"LocalIpAddress":"192.168.132.1:5000","RemoteIpAddress":"192.168.132.1","$type":"UserLoginSuccessEvent"}
+2019-08-03 11:41:31.560 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":null,"Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLONKNH8SHCA:00000001","TimeStamp":"2019-08-03T01:41:31.0000000Z","ProcessId":6872,"LocalIpAddress":"192.168.132.1:5000","RemoteIpAddress":"192.168.132.1","$type":"UserLoginSuccessEvent"}
+2019-08-03 11:41:31.574 +10:00 [DBG] Resource owner password token request validation success.
+2019-08-03 11:41:31.577 +10:00 [INF] Token request validation success
+{"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","GrantType":"password","Scopes":"doctalk_auth_api email openid profile","AuthorizationCode":null,"RefreshToken":null,"UserName":"nguyenkien1402","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","username":"nguyenkien1402","password":"***REDACTED***","scope":"openid email profile doctalk_auth_api","client_id":"ro.client","client_secret":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-08-03 11:41:31.581 +10:00 [DBG] Getting claims for access token for client: ro.client
+2019-08-03 11:41:31.582 +10:00 [DBG] Getting claims for access token for subject: a2661b40-2b93-48b8-a5aa-90e6c69797ae
+2019-08-03 11:41:31.712 +10:00 [INF] {"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","RedirectUri":null,"Endpoint":"Token","SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","Scopes":"email openid profile doctalk_auth_api","GrantType":"password","Tokens":[{"TokenType":"access_token","TokenValue":"****go2g","$type":"Token"}],"Category":"Token","Name":"Token Issued Success","EventType":"Success","Id":2000,"Message":null,"ActivityId":"0HLONKNH8SHCA:00000001","TimeStamp":"2019-08-03T01:41:31.0000000Z","ProcessId":6872,"LocalIpAddress":"192.168.132.1:5000","RemoteIpAddress":"192.168.132.1","$type":"TokenIssuedSuccessEvent"}
+2019-08-03 11:41:31.716 +10:00 [DBG] Token request success.
+2019-08-03 11:41:32.131 +10:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2019-08-03 11:41:32.151 +10:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2019-08-03 11:41:32.167 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2019-08-03 11:41:32.174 +10:00 [DBG] Start userinfo request
+2019-08-03 11:41:32.177 +10:00 [DBG] Bearer token found in header
+2019-08-03 11:41:32.188 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-03 11:41:32.190 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-03 11:41:32.213 +10:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2019-08-03 11:41:32.218 +10:00 [DBG] Token validation success
+{"ClientId":null,"ClientName":null,"ValidateLifetime":true,"AccessTokenType":"Jwt","ExpectedScope":"openid","TokenHandle":null,"JwtId":null,"Claims":{"nbf":1564796491,"exp":1596332491,"iss":"http://192.168.132.1:5000","aud":["http://192.168.132.1:5000/resources","doctalk_auth_api"],"client_id":"ro.client","sub":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","auth_time":1564796491,"idp":"local","scope":["email","openid","profile","doctalk_auth_api"],"amr":"pwd"},"$type":"TokenValidationLog"}
+2019-08-03 11:41:32.222 +10:00 [DBG] Creating userinfo response
+2019-08-03 11:41:32.223 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-03 11:41:32.223 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-03 11:41:32.225 +10:00 [DBG] Requested claim types: email email_verified sub name family_name given_name middle_name nickname preferred_username profile picture website gender birthdate zoneinfo locale updated_at
+2019-08-03 11:41:32.226 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-03 11:41:32.245 +10:00 [INF] Profile service returned the following claim types: sub preferred_username name email email_verified
+2019-08-03 11:41:32.246 +10:00 [DBG] End userinfo request
+2019-08-03 11:41:35.107 +10:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-08-03 11:41:35.117 +10:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-08-03 11:41:35.118 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-08-03 11:41:35.119 +10:00 [DBG] Start discovery request
+2019-08-03 11:41:35.358 +10:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-08-03 11:41:35.360 +10:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-08-03 11:41:35.361 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-08-03 11:41:35.363 +10:00 [DBG] Start key discovery request
+2019-08-03 12:18:13.758 +10:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-08-03 12:18:13.800 +10:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-08-03 12:18:13.802 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-08-03 12:18:13.805 +10:00 [DBG] Start token request.
+2019-08-03 12:18:13.806 +10:00 [DBG] Start client validation
+2019-08-03 12:18:13.806 +10:00 [DBG] Start parsing Basic Authentication secret
+2019-08-03 12:18:13.808 +10:00 [DBG] Start parsing for secret in post body
+2019-08-03 12:18:13.814 +10:00 [DBG] Parser found secret: PostBodySecretParser
+2019-08-03 12:18:13.814 +10:00 [DBG] Secret id found: ro.client
+2019-08-03 12:18:13.815 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-03 12:18:13.821 +10:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-08-03 12:18:13.822 +10:00 [DBG] Client validation success
+2019-08-03 12:18:13.828 +10:00 [INF] {"ClientId":"ro.client","AuthenticationMethod":"SharedSecret","Category":"Authentication","Name":"Client Authentication Success","EventType":"Success","Id":1010,"Message":null,"ActivityId":"0HLONKNH8SHCD:00000001","TimeStamp":"2019-08-03T02:18:13.0000000Z","ProcessId":6872,"LocalIpAddress":"192.168.132.1:5000","RemoteIpAddress":"192.168.132.1","$type":"ClientAuthenticationSuccessEvent"}
+2019-08-03 12:18:13.833 +10:00 [DBG] Start token request validation
+2019-08-03 12:18:13.834 +10:00 [DBG] Start resource owner password token request validation
+2019-08-03 12:18:13.954 +10:00 [INF] Credentials validated for username: nguyenkien1402
+2019-08-03 12:18:13.956 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":"nguyenkien1402","Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLONKNH8SHCD:00000001","TimeStamp":"2019-08-03T02:18:13.0000000Z","ProcessId":6872,"LocalIpAddress":"192.168.132.1:5000","RemoteIpAddress":"192.168.132.1","$type":"UserLoginSuccessEvent"}
+2019-08-03 12:18:13.960 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":null,"Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLONKNH8SHCD:00000001","TimeStamp":"2019-08-03T02:18:13.0000000Z","ProcessId":6872,"LocalIpAddress":"192.168.132.1:5000","RemoteIpAddress":"192.168.132.1","$type":"UserLoginSuccessEvent"}
+2019-08-03 12:18:13.963 +10:00 [DBG] Resource owner password token request validation success.
+2019-08-03 12:18:13.965 +10:00 [INF] Token request validation success
+{"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","GrantType":"password","Scopes":"doctalk_auth_api email openid profile","AuthorizationCode":null,"RefreshToken":null,"UserName":"nguyenkien1402","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","username":"nguyenkien1402","password":"***REDACTED***","scope":"openid email profile doctalk_auth_api","client_id":"ro.client","client_secret":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-08-03 12:18:13.968 +10:00 [DBG] Getting claims for access token for client: ro.client
+2019-08-03 12:18:13.968 +10:00 [DBG] Getting claims for access token for subject: a2661b40-2b93-48b8-a5aa-90e6c69797ae
+2019-08-03 12:18:14.046 +10:00 [INF] {"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","RedirectUri":null,"Endpoint":"Token","SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","Scopes":"email openid profile doctalk_auth_api","GrantType":"password","Tokens":[{"TokenType":"access_token","TokenValue":"****QBAQ","$type":"Token"}],"Category":"Token","Name":"Token Issued Success","EventType":"Success","Id":2000,"Message":null,"ActivityId":"0HLONKNH8SHCD:00000001","TimeStamp":"2019-08-03T02:18:14.0000000Z","ProcessId":6872,"LocalIpAddress":"192.168.132.1:5000","RemoteIpAddress":"192.168.132.1","$type":"TokenIssuedSuccessEvent"}
+2019-08-03 12:18:14.048 +10:00 [DBG] Token request success.
+2019-08-03 12:18:14.383 +10:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2019-08-03 12:18:14.386 +10:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2019-08-03 12:18:14.388 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2019-08-03 12:18:14.393 +10:00 [DBG] Start userinfo request
+2019-08-03 12:18:14.395 +10:00 [DBG] Bearer token found in header
+2019-08-03 12:18:14.414 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-03 12:18:14.441 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-03 12:18:14.479 +10:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2019-08-03 12:18:14.485 +10:00 [DBG] Token validation success
+{"ClientId":null,"ClientName":null,"ValidateLifetime":true,"AccessTokenType":"Jwt","ExpectedScope":"openid","TokenHandle":null,"JwtId":null,"Claims":{"nbf":1564798694,"exp":1596334694,"iss":"http://192.168.132.1:5000","aud":["http://192.168.132.1:5000/resources","doctalk_auth_api"],"client_id":"ro.client","sub":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","auth_time":1564798693,"idp":"local","scope":["email","openid","profile","doctalk_auth_api"],"amr":"pwd"},"$type":"TokenValidationLog"}
+2019-08-03 12:18:14.490 +10:00 [DBG] Creating userinfo response
+2019-08-03 12:18:14.491 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-03 12:18:14.492 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-03 12:18:14.495 +10:00 [DBG] Requested claim types: email email_verified sub name family_name given_name middle_name nickname preferred_username profile picture website gender birthdate zoneinfo locale updated_at
+2019-08-03 12:18:14.496 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-03 12:18:14.512 +10:00 [INF] Profile service returned the following claim types: sub preferred_username name email email_verified
+2019-08-03 12:18:14.513 +10:00 [DBG] End userinfo request
+2019-08-03 12:18:17.137 +10:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-08-03 12:18:17.175 +10:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-08-03 12:18:17.212 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-08-03 12:18:17.214 +10:00 [DBG] Start discovery request
+2019-08-03 12:18:17.518 +10:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-08-03 12:18:17.521 +10:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-08-03 12:18:17.549 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-08-03 12:18:17.551 +10:00 [DBG] Start key discovery request
+2019-08-03 12:23:33.159 +10:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-08-03 12:23:33.208 +10:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-08-03 12:23:33.210 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-08-03 12:23:33.216 +10:00 [DBG] Start token request.
+2019-08-03 12:23:33.216 +10:00 [DBG] Start client validation
+2019-08-03 12:23:33.217 +10:00 [DBG] Start parsing Basic Authentication secret
+2019-08-03 12:23:33.218 +10:00 [DBG] Start parsing for secret in post body
+2019-08-03 12:23:33.222 +10:00 [DBG] Parser found secret: PostBodySecretParser
+2019-08-03 12:23:33.223 +10:00 [DBG] Secret id found: ro.client
+2019-08-03 12:23:33.224 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-03 12:23:33.225 +10:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-08-03 12:23:33.227 +10:00 [DBG] Client validation success
+2019-08-03 12:23:33.229 +10:00 [INF] {"ClientId":"ro.client","AuthenticationMethod":"SharedSecret","Category":"Authentication","Name":"Client Authentication Success","EventType":"Success","Id":1010,"Message":null,"ActivityId":"0HLONKNH8SHCG:00000001","TimeStamp":"2019-08-03T02:23:33.0000000Z","ProcessId":6872,"LocalIpAddress":"192.168.132.1:5000","RemoteIpAddress":"192.168.132.1","$type":"ClientAuthenticationSuccessEvent"}
+2019-08-03 12:23:33.236 +10:00 [DBG] Start token request validation
+2019-08-03 12:23:33.240 +10:00 [DBG] Start resource owner password token request validation
+2019-08-03 12:23:33.332 +10:00 [INF] Credentials validated for username: nguyenkien1402
+2019-08-03 12:23:33.334 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":"nguyenkien1402","Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLONKNH8SHCG:00000001","TimeStamp":"2019-08-03T02:23:33.0000000Z","ProcessId":6872,"LocalIpAddress":"192.168.132.1:5000","RemoteIpAddress":"192.168.132.1","$type":"UserLoginSuccessEvent"}
+2019-08-03 12:23:33.337 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":null,"Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLONKNH8SHCG:00000001","TimeStamp":"2019-08-03T02:23:33.0000000Z","ProcessId":6872,"LocalIpAddress":"192.168.132.1:5000","RemoteIpAddress":"192.168.132.1","$type":"UserLoginSuccessEvent"}
+2019-08-03 12:23:33.340 +10:00 [DBG] Resource owner password token request validation success.
+2019-08-03 12:23:33.341 +10:00 [INF] Token request validation success
+{"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","GrantType":"password","Scopes":"doctalk_auth_api email openid profile","AuthorizationCode":null,"RefreshToken":null,"UserName":"nguyenkien1402","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","username":"nguyenkien1402","password":"***REDACTED***","scope":"openid email profile doctalk_auth_api","client_id":"ro.client","client_secret":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-08-03 12:23:33.344 +10:00 [DBG] Getting claims for access token for client: ro.client
+2019-08-03 12:23:33.345 +10:00 [DBG] Getting claims for access token for subject: a2661b40-2b93-48b8-a5aa-90e6c69797ae
+2019-08-03 12:23:33.385 +10:00 [INF] {"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","RedirectUri":null,"Endpoint":"Token","SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","Scopes":"email openid profile doctalk_auth_api","GrantType":"password","Tokens":[{"TokenType":"access_token","TokenValue":"****4xcg","$type":"Token"}],"Category":"Token","Name":"Token Issued Success","EventType":"Success","Id":2000,"Message":null,"ActivityId":"0HLONKNH8SHCG:00000001","TimeStamp":"2019-08-03T02:23:33.0000000Z","ProcessId":6872,"LocalIpAddress":"192.168.132.1:5000","RemoteIpAddress":"192.168.132.1","$type":"TokenIssuedSuccessEvent"}
+2019-08-03 12:23:33.390 +10:00 [DBG] Token request success.
+2019-08-03 12:23:33.709 +10:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2019-08-03 12:23:33.713 +10:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2019-08-03 12:23:33.714 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2019-08-03 12:23:33.718 +10:00 [DBG] Start userinfo request
+2019-08-03 12:23:33.720 +10:00 [DBG] Bearer token found in header
+2019-08-03 12:23:33.726 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-03 12:23:33.727 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-03 12:23:33.742 +10:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2019-08-03 12:23:33.744 +10:00 [DBG] Token validation success
+{"ClientId":null,"ClientName":null,"ValidateLifetime":true,"AccessTokenType":"Jwt","ExpectedScope":"openid","TokenHandle":null,"JwtId":null,"Claims":{"nbf":1564799013,"exp":1596335013,"iss":"http://192.168.132.1:5000","aud":["http://192.168.132.1:5000/resources","doctalk_auth_api"],"client_id":"ro.client","sub":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","auth_time":1564799013,"idp":"local","scope":["email","openid","profile","doctalk_auth_api"],"amr":"pwd"},"$type":"TokenValidationLog"}
+2019-08-03 12:23:33.750 +10:00 [DBG] Creating userinfo response
+2019-08-03 12:23:33.750 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-03 12:23:33.751 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-03 12:23:33.752 +10:00 [DBG] Requested claim types: email email_verified sub name family_name given_name middle_name nickname preferred_username profile picture website gender birthdate zoneinfo locale updated_at
+2019-08-03 12:23:33.753 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-03 12:23:33.785 +10:00 [INF] Profile service returned the following claim types: sub preferred_username name email email_verified
+2019-08-03 12:23:33.786 +10:00 [DBG] End userinfo request
+2019-08-03 12:23:36.203 +10:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-08-03 12:23:36.233 +10:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-08-03 12:23:36.341 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-08-03 12:23:36.367 +10:00 [DBG] Start discovery request
+2019-08-03 12:23:36.649 +10:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-08-03 12:23:36.650 +10:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-08-03 12:23:36.651 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-08-03 12:23:36.653 +10:00 [DBG] Start key discovery request
