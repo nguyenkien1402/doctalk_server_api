@@ -10,6 +10,7 @@ using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
 using System.Linq;
+using DocTalk_Dev_Auth.Utilities;
 
 namespace DocTalk_Dev_Auth
 {
@@ -21,7 +22,7 @@ namespace DocTalk_Dev_Auth
             if (seed) args = args.Except(new[] { "/seed" }).ToArray();
 
             var host = CreateWebHostBuilder(args)
-                        .UseUrls("http://192.168.132.1:5000").Build();
+                        .UseUrls(Messages.IP_ADDRESS_URL).Build();
 
             if (seed)
             {

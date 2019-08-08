@@ -11,6 +11,7 @@ using DocTalk_Dev_API.Models;
 using DocTalk_Dev_API.Views;
 using IdentityModel.Client;
 using System.Net.Http;
+using DocTalk_Dev_API.Utilities;
 
 namespace DocTalk_Dev_API.Controllers
 {
@@ -145,7 +146,7 @@ namespace DocTalk_Dev_API.Controllers
             // Call API to get the token
             var apiClientCredentials = new PasswordTokenRequest
             {
-                Address = "http://192.168.132.1:5000/connect/token",
+                Address = Messages.AUTH_IP_ADDRESS_URL+"/connect/token",
 
                 ClientId = "ro.client",
                 ClientSecret = "secret",

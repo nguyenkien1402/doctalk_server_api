@@ -7,6 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using DocTalk_Dev_API.Utilities;
 
 namespace DocTalk_Dev_API
 {
@@ -14,7 +15,7 @@ namespace DocTalk_Dev_API
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).UseUrls("http://192.168.132.1:5001").Build().Run();
+            CreateWebHostBuilder(args).UseUrls(Messages.APP_IP_ADDRESS_URL).Build().Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

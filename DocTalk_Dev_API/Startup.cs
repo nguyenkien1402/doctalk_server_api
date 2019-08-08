@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using IdentityServer4;
 using DocTalk_Dev_API.Hubs;
+using DocTalk_Dev_API.Utilities;
 
 namespace DocTalk_Dev_API
 {
@@ -33,7 +34,7 @@ namespace DocTalk_Dev_API
             services.AddAuthentication("Bearer")
                 .AddIdentityServerAuthentication(options =>
                 {
-                    options.Authority = "http://192.168.132.1:5000";
+                    options.Authority = Messages.AUTH_IP_ADDRESS_URL;
                     options.RequireHttpsMetadata = false;
                     options.ApiName = "doctalk_auth_api";
                 });

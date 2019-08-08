@@ -9459,3 +9459,523 @@ Parameter name: password
 2019-08-03 12:23:36.650 +10:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
 2019-08-03 12:23:36.651 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
 2019-08-03 12:23:36.653 +10:00 [DBG] Start key discovery request
+2019-08-07 21:49:07.686 +10:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-08-07 21:49:07.754 +10:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-08-07 21:49:07.760 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-08-07 21:49:07.761 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-08-07 21:49:07.761 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-08-07 21:49:07.761 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-08-07 21:49:07.762 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-08-07 21:49:07.993 +10:00 [FTL] Unable to start Kestrel.
+System.Net.Sockets.SocketException (10049): The requested address is not valid in its context
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass22_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+2019-08-07 21:50:27.336 +10:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-08-07 21:50:27.403 +10:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-08-07 21:50:27.409 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-08-07 21:50:27.410 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-08-07 21:50:27.411 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-08-07 21:50:27.413 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-08-07 21:50:27.413 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-08-07 21:52:03.616 +10:00 [DBG] Login Url: /Account/Login
+2019-08-07 21:52:03.625 +10:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-08-07 21:52:03.626 +10:00 [DBG] Logout Url: /Account/Logout
+2019-08-07 21:52:03.626 +10:00 [DBG] ConsentUrl Url: /consent
+2019-08-07 21:52:03.627 +10:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-08-07 21:52:03.628 +10:00 [DBG] Error Url: /home/error
+2019-08-07 21:52:03.628 +10:00 [DBG] Error Id Parameter: errorId
+2019-08-07 21:52:03.679 +10:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2019-08-07 21:52:03.955 +10:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2019-08-07 21:52:03.956 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2019-08-07 21:52:03.965 +10:00 [DBG] Start userinfo request
+2019-08-07 21:52:03.972 +10:00 [DBG] Bearer token found in header
+2019-08-07 21:52:04.006 +10:00 [DBG] reference_token grant with value: null not found in store.
+2019-08-07 21:52:04.016 +10:00 [ERR] Invalid reference token.
+{"ClientId":null,"ClientName":null,"ValidateLifetime":true,"AccessTokenType":"Reference","ExpectedScope":"openid","TokenHandle":"null","JwtId":null,"Claims":null,"$type":"TokenValidationLog"}
+2019-08-07 21:53:15.590 +10:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2019-08-07 21:53:15.591 +10:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2019-08-07 21:53:15.593 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2019-08-07 21:53:15.597 +10:00 [DBG] Start userinfo request
+2019-08-07 21:53:15.598 +10:00 [DBG] Bearer token found in header
+2019-08-07 21:53:15.606 +10:00 [DBG] reference_token grant with value: null not found in store.
+2019-08-07 21:53:15.608 +10:00 [ERR] Invalid reference token.
+{"ClientId":null,"ClientName":null,"ValidateLifetime":true,"AccessTokenType":"Reference","ExpectedScope":"openid","TokenHandle":"null","JwtId":null,"Claims":null,"$type":"TokenValidationLog"}
+2019-08-07 21:55:08.529 +10:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2019-08-07 21:55:08.533 +10:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2019-08-07 21:55:08.534 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2019-08-07 21:55:08.534 +10:00 [DBG] Start userinfo request
+2019-08-07 21:55:08.535 +10:00 [DBG] Bearer token found in header
+2019-08-07 21:55:08.536 +10:00 [DBG] reference_token grant with value: null not found in store.
+2019-08-07 21:55:08.536 +10:00 [ERR] Invalid reference token.
+{"ClientId":null,"ClientName":null,"ValidateLifetime":true,"AccessTokenType":"Reference","ExpectedScope":"openid","TokenHandle":"null","JwtId":null,"Claims":null,"$type":"TokenValidationLog"}
+2019-08-07 21:58:20.036 +10:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-08-07 21:58:20.082 +10:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-08-07 21:58:20.087 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-08-07 21:58:20.111 +10:00 [DBG] Start token request.
+2019-08-07 21:58:20.130 +10:00 [DBG] Start client validation
+2019-08-07 21:58:20.151 +10:00 [DBG] Start parsing Basic Authentication secret
+2019-08-07 21:58:20.176 +10:00 [DBG] Start parsing for secret in post body
+2019-08-07 21:58:20.236 +10:00 [DBG] Parser found secret: PostBodySecretParser
+2019-08-07 21:58:20.237 +10:00 [DBG] Secret id found: ro.client
+2019-08-07 21:58:20.269 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-07 21:58:20.288 +10:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-08-07 21:58:20.288 +10:00 [DBG] Client validation success
+2019-08-07 21:58:20.312 +10:00 [INF] {"ClientId":"ro.client","AuthenticationMethod":"SharedSecret","Category":"Authentication","Name":"Client Authentication Success","EventType":"Success","Id":1010,"Message":null,"ActivityId":"0HLOR5MKT09LK:00000001","TimeStamp":"2019-08-07T11:58:20.0000000Z","ProcessId":15712,"LocalIpAddress":"118.139.10.65:5000","RemoteIpAddress":"118.139.10.65","$type":"ClientAuthenticationSuccessEvent"}
+2019-08-07 21:58:20.333 +10:00 [DBG] Start token request validation
+2019-08-07 21:58:20.359 +10:00 [DBG] Start resource owner password token request validation
+2019-08-07 21:58:21.505 +10:00 [INF] Credentials validated for username: nguyenkien1402
+2019-08-07 21:58:21.508 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":"nguyenkien1402","Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLOR5MKT09LK:00000001","TimeStamp":"2019-08-07T11:58:21.0000000Z","ProcessId":15712,"LocalIpAddress":"118.139.10.65:5000","RemoteIpAddress":"118.139.10.65","$type":"UserLoginSuccessEvent"}
+2019-08-07 21:58:21.539 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":null,"Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLOR5MKT09LK:00000001","TimeStamp":"2019-08-07T11:58:21.0000000Z","ProcessId":15712,"LocalIpAddress":"118.139.10.65:5000","RemoteIpAddress":"118.139.10.65","$type":"UserLoginSuccessEvent"}
+2019-08-07 21:58:21.548 +10:00 [DBG] Resource owner password token request validation success.
+2019-08-07 21:58:21.582 +10:00 [INF] Token request validation success
+{"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","GrantType":"password","Scopes":"doctalk_auth_api email openid profile","AuthorizationCode":null,"RefreshToken":null,"UserName":"nguyenkien1402","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","username":"nguyenkien1402","password":"***REDACTED***","scope":"openid email profile doctalk_auth_api","client_id":"ro.client","client_secret":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-08-07 21:58:21.665 +10:00 [DBG] Getting claims for access token for client: ro.client
+2019-08-07 21:58:21.668 +10:00 [DBG] Getting claims for access token for subject: a2661b40-2b93-48b8-a5aa-90e6c69797ae
+2019-08-07 21:58:22.274 +10:00 [INF] {"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","RedirectUri":null,"Endpoint":"Token","SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","Scopes":"email openid profile doctalk_auth_api","GrantType":"password","Tokens":[{"TokenType":"access_token","TokenValue":"****w1EA","$type":"Token"}],"Category":"Token","Name":"Token Issued Success","EventType":"Success","Id":2000,"Message":null,"ActivityId":"0HLOR5MKT09LK:00000001","TimeStamp":"2019-08-07T11:58:22.0000000Z","ProcessId":15712,"LocalIpAddress":"118.139.10.65:5000","RemoteIpAddress":"118.139.10.65","$type":"TokenIssuedSuccessEvent"}
+2019-08-07 21:58:22.285 +10:00 [DBG] Token request success.
+2019-08-07 21:58:22.675 +10:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2019-08-07 21:58:22.679 +10:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2019-08-07 21:58:22.682 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2019-08-07 21:58:22.683 +10:00 [DBG] Start userinfo request
+2019-08-07 21:58:22.684 +10:00 [DBG] Bearer token found in header
+2019-08-07 21:58:22.793 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-07 21:58:22.809 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-07 21:58:22.892 +10:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2019-08-07 21:58:22.897 +10:00 [DBG] Token validation success
+{"ClientId":null,"ClientName":null,"ValidateLifetime":true,"AccessTokenType":"Jwt","ExpectedScope":"openid","TokenHandle":null,"JwtId":null,"Claims":{"nbf":1565179102,"exp":1596715102,"iss":"http://118.139.10.65:5000","aud":["http://118.139.10.65:5000/resources","doctalk_auth_api"],"client_id":"ro.client","sub":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","auth_time":1565179101,"idp":"local","scope":["email","openid","profile","doctalk_auth_api"],"amr":"pwd"},"$type":"TokenValidationLog"}
+2019-08-07 21:58:22.927 +10:00 [DBG] Creating userinfo response
+2019-08-07 21:58:22.938 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-07 21:58:22.949 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-07 21:58:22.956 +10:00 [DBG] Requested claim types: email email_verified sub name family_name given_name middle_name nickname preferred_username profile picture website gender birthdate zoneinfo locale updated_at
+2019-08-07 21:58:22.957 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-07 21:58:23.107 +10:00 [INF] Profile service returned the following claim types: sub preferred_username name email email_verified
+2019-08-07 21:58:23.111 +10:00 [DBG] End userinfo request
+2019-08-07 21:58:26.269 +10:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-08-07 21:58:26.289 +10:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-08-07 21:58:26.304 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-08-07 21:58:26.314 +10:00 [DBG] Start discovery request
+2019-08-07 21:58:26.678 +10:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-08-07 21:58:26.690 +10:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-08-07 21:58:26.701 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-08-07 21:58:26.721 +10:00 [DBG] Start key discovery request
+2019-08-07 21:58:46.023 +10:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-08-07 21:58:46.025 +10:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-08-07 21:58:46.027 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-08-07 21:58:46.028 +10:00 [DBG] Start token request.
+2019-08-07 21:58:46.031 +10:00 [DBG] Start client validation
+2019-08-07 21:58:46.032 +10:00 [DBG] Start parsing Basic Authentication secret
+2019-08-07 21:58:46.033 +10:00 [DBG] Start parsing for secret in post body
+2019-08-07 21:58:46.034 +10:00 [DBG] Parser found secret: PostBodySecretParser
+2019-08-07 21:58:46.051 +10:00 [DBG] Secret id found: ro.client
+2019-08-07 21:58:46.053 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-07 21:58:46.056 +10:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-08-07 21:58:46.058 +10:00 [DBG] Client validation success
+2019-08-07 21:58:46.060 +10:00 [INF] {"ClientId":"ro.client","AuthenticationMethod":"SharedSecret","Category":"Authentication","Name":"Client Authentication Success","EventType":"Success","Id":1010,"Message":null,"ActivityId":"0HLOR5MKT09LN:00000001","TimeStamp":"2019-08-07T11:58:46.0000000Z","ProcessId":15712,"LocalIpAddress":"118.139.10.65:5000","RemoteIpAddress":"118.139.10.65","$type":"ClientAuthenticationSuccessEvent"}
+2019-08-07 21:58:46.063 +10:00 [DBG] Start token request validation
+2019-08-07 21:58:46.063 +10:00 [DBG] Start resource owner password token request validation
+2019-08-07 21:58:46.084 +10:00 [INF] Credentials validated for username: nguyenkien1402
+2019-08-07 21:58:46.085 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":"nguyenkien1402","Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLOR5MKT09LN:00000001","TimeStamp":"2019-08-07T11:58:46.0000000Z","ProcessId":15712,"LocalIpAddress":"118.139.10.65:5000","RemoteIpAddress":"118.139.10.65","$type":"UserLoginSuccessEvent"}
+2019-08-07 21:58:46.089 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":null,"Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLOR5MKT09LN:00000001","TimeStamp":"2019-08-07T11:58:46.0000000Z","ProcessId":15712,"LocalIpAddress":"118.139.10.65:5000","RemoteIpAddress":"118.139.10.65","$type":"UserLoginSuccessEvent"}
+2019-08-07 21:58:46.092 +10:00 [DBG] Resource owner password token request validation success.
+2019-08-07 21:58:46.094 +10:00 [INF] Token request validation success
+{"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","GrantType":"password","Scopes":"doctalk_auth_api email openid profile","AuthorizationCode":null,"RefreshToken":null,"UserName":"nguyenkien1402","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","username":"nguyenkien1402","password":"***REDACTED***","scope":"openid email profile doctalk_auth_api","client_id":"ro.client","client_secret":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-08-07 21:58:46.097 +10:00 [DBG] Getting claims for access token for client: ro.client
+2019-08-07 21:58:46.097 +10:00 [DBG] Getting claims for access token for subject: a2661b40-2b93-48b8-a5aa-90e6c69797ae
+2019-08-07 21:58:46.121 +10:00 [INF] {"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","RedirectUri":null,"Endpoint":"Token","SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","Scopes":"email openid profile doctalk_auth_api","GrantType":"password","Tokens":[{"TokenType":"access_token","TokenValue":"****pvtQ","$type":"Token"}],"Category":"Token","Name":"Token Issued Success","EventType":"Success","Id":2000,"Message":null,"ActivityId":"0HLOR5MKT09LN:00000001","TimeStamp":"2019-08-07T11:58:46.0000000Z","ProcessId":15712,"LocalIpAddress":"118.139.10.65:5000","RemoteIpAddress":"118.139.10.65","$type":"TokenIssuedSuccessEvent"}
+2019-08-07 21:58:46.124 +10:00 [DBG] Token request success.
+2019-08-07 21:58:46.202 +10:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2019-08-07 21:58:46.205 +10:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2019-08-07 21:58:46.206 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2019-08-07 21:58:46.209 +10:00 [DBG] Start userinfo request
+2019-08-07 21:58:46.211 +10:00 [DBG] Bearer token found in header
+2019-08-07 21:58:46.214 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-07 21:58:46.215 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-07 21:58:46.220 +10:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2019-08-07 21:58:46.221 +10:00 [DBG] Token validation success
+{"ClientId":null,"ClientName":null,"ValidateLifetime":true,"AccessTokenType":"Jwt","ExpectedScope":"openid","TokenHandle":null,"JwtId":null,"Claims":{"nbf":1565179126,"exp":1596715126,"iss":"http://118.139.10.65:5000","aud":["http://118.139.10.65:5000/resources","doctalk_auth_api"],"client_id":"ro.client","sub":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","auth_time":1565179126,"idp":"local","scope":["email","openid","profile","doctalk_auth_api"],"amr":"pwd"},"$type":"TokenValidationLog"}
+2019-08-07 21:58:46.225 +10:00 [DBG] Creating userinfo response
+2019-08-07 21:58:46.225 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-07 21:58:46.226 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-07 21:58:46.226 +10:00 [DBG] Requested claim types: email email_verified sub name family_name given_name middle_name nickname preferred_username profile picture website gender birthdate zoneinfo locale updated_at
+2019-08-07 21:58:46.227 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-07 21:58:46.233 +10:00 [INF] Profile service returned the following claim types: sub preferred_username name email email_verified
+2019-08-07 21:58:46.234 +10:00 [DBG] End userinfo request
+2019-08-08 22:03:54.633 +10:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-08-08 22:03:54.725 +10:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-08-08 22:03:54.736 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-08-08 22:03:54.737 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-08-08 22:03:54.737 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-08-08 22:03:54.739 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-08-08 22:03:54.740 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-08-08 22:03:55.067 +10:00 [FTL] Unable to start Kestrel.
+System.Net.Sockets.SocketException (10049): The requested address is not valid in its context
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass22_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+2019-08-08 22:04:55.504 +10:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-08-08 22:04:55.550 +10:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-08-08 22:04:55.557 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-08-08 22:04:55.557 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-08-08 22:04:55.558 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-08-08 22:04:55.558 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-08-08 22:04:55.561 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-08-08 22:04:55.663 +10:00 [FTL] Unable to start Kestrel.
+System.Net.Sockets.SocketException (10049): The requested address is not valid in its context
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass22_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+2019-08-08 22:06:30.539 +10:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-08-08 22:06:30.672 +10:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-08-08 22:06:30.689 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-08-08 22:06:30.691 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-08-08 22:06:30.692 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-08-08 22:06:30.698 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-08-08 22:06:30.700 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-08-08 22:06:30.914 +10:00 [FTL] Unable to start Kestrel.
+System.Net.Sockets.SocketException (10049): The requested address is not valid in its context
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass22_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+2019-08-08 22:07:00.348 +10:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-08-08 22:07:00.396 +10:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-08-08 22:07:00.404 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-08-08 22:07:00.404 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-08-08 22:07:00.405 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-08-08 22:07:00.406 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-08-08 22:07:00.406 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-08-08 22:07:00.518 +10:00 [FTL] Unable to start Kestrel.
+System.Net.Sockets.SocketException (10049): The requested address is not valid in its context
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass22_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+2019-08-08 22:07:30.038 +10:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-08-08 22:07:30.100 +10:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-08-08 22:07:30.108 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-08-08 22:07:30.109 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-08-08 22:07:30.109 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-08-08 22:07:30.110 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-08-08 22:07:30.111 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-08-08 22:07:30.271 +10:00 [FTL] Unable to start Kestrel.
+System.Net.Sockets.SocketException (10049): The requested address is not valid in its context
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass22_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+2019-08-08 22:08:04.069 +10:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-08-08 22:08:04.133 +10:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-08-08 22:08:04.149 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-08-08 22:08:04.150 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-08-08 22:08:04.158 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-08-08 22:08:04.160 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-08-08 22:08:04.161 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-08-08 22:08:04.311 +10:00 [FTL] Unable to start Kestrel.
+System.Net.Sockets.SocketException (10049): The requested address is not valid in its context
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass22_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+2019-08-08 22:08:35.937 +10:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-08-08 22:08:35.997 +10:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-08-08 22:08:36.001 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-08-08 22:08:36.002 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-08-08 22:08:36.002 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-08-08 22:08:36.003 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-08-08 22:08:36.004 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-08-08 22:08:36.135 +10:00 [FTL] Unable to start Kestrel.
+System.Net.Sockets.SocketException (10049): The requested address is not valid in its context
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransport.BindAsync()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.<>c__DisplayClass22_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(IServerAddressesFeature addresses, KestrelServerOptions serverOptions, ILogger logger, Func`2 createBinding)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+2019-08-08 22:09:09.108 +10:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-08-08 22:09:09.204 +10:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-08-08 22:09:09.215 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-08-08 22:09:09.215 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-08-08 22:09:09.216 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-08-08 22:09:09.217 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-08-08 22:09:09.218 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-08-08 22:09:47.999 +10:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-08-08 22:09:48.061 +10:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-08-08 22:09:48.066 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-08-08 22:09:48.067 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-08-08 22:09:48.067 +10:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-08-08 22:09:48.068 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-08-08 22:09:48.068 +10:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-08-08 22:13:58.386 +10:00 [DBG] Login Url: /Account/Login
+2019-08-08 22:13:58.396 +10:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-08-08 22:13:58.396 +10:00 [DBG] Logout Url: /Account/Logout
+2019-08-08 22:13:58.397 +10:00 [DBG] ConsentUrl Url: /consent
+2019-08-08 22:13:58.397 +10:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-08-08 22:13:58.398 +10:00 [DBG] Error Url: /home/error
+2019-08-08 22:13:58.398 +10:00 [DBG] Error Id Parameter: errorId
+2019-08-08 22:13:58.441 +10:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2019-08-08 22:13:58.709 +10:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2019-08-08 22:13:58.710 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2019-08-08 22:13:58.722 +10:00 [DBG] Start userinfo request
+2019-08-08 22:13:58.731 +10:00 [DBG] Bearer token found in header
+2019-08-08 22:13:58.778 +10:00 [DBG] reference_token grant with value: null not found in store.
+2019-08-08 22:13:58.788 +10:00 [ERR] Invalid reference token.
+{"ClientId":null,"ClientName":null,"ValidateLifetime":true,"AccessTokenType":"Reference","ExpectedScope":"openid","TokenHandle":"null","JwtId":null,"Claims":null,"$type":"TokenValidationLog"}
+2019-08-08 22:15:49.110 +10:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-08-08 22:15:49.132 +10:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-08-08 22:15:49.150 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-08-08 22:15:49.176 +10:00 [DBG] Start token request.
+2019-08-08 22:15:49.193 +10:00 [DBG] Start client validation
+2019-08-08 22:15:49.208 +10:00 [DBG] Start parsing Basic Authentication secret
+2019-08-08 22:15:49.216 +10:00 [DBG] Start parsing for secret in post body
+2019-08-08 22:15:49.271 +10:00 [DBG] Parser found secret: PostBodySecretParser
+2019-08-08 22:15:49.275 +10:00 [DBG] Secret id found: ro.client
+2019-08-08 22:15:49.306 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-08 22:15:49.329 +10:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-08-08 22:15:49.331 +10:00 [DBG] Client validation success
+2019-08-08 22:15:49.356 +10:00 [INF] {"ClientId":"ro.client","AuthenticationMethod":"SharedSecret","Category":"Authentication","Name":"Client Authentication Success","EventType":"Success","Id":1010,"Message":null,"ActivityId":"0HLORV7HT7N4P:00000001","TimeStamp":"2019-08-08T12:15:49.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"ClientAuthenticationSuccessEvent"}
+2019-08-08 22:15:49.385 +10:00 [DBG] Start token request validation
+2019-08-08 22:15:49.420 +10:00 [DBG] Start resource owner password token request validation
+2019-08-08 22:15:50.464 +10:00 [INF] Credentials validated for username: nguyenkien1402
+2019-08-08 22:15:50.471 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":"nguyenkien1402","Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLORV7HT7N4P:00000001","TimeStamp":"2019-08-08T12:15:50.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"UserLoginSuccessEvent"}
+2019-08-08 22:15:50.501 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":null,"Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLORV7HT7N4P:00000001","TimeStamp":"2019-08-08T12:15:50.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"UserLoginSuccessEvent"}
+2019-08-08 22:15:50.504 +10:00 [DBG] Resource owner password token request validation success.
+2019-08-08 22:15:50.520 +10:00 [INF] Token request validation success
+{"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","GrantType":"password","Scopes":"doctalk_auth_api email openid profile","AuthorizationCode":null,"RefreshToken":null,"UserName":"nguyenkien1402","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","username":"nguyenkien1402","password":"***REDACTED***","scope":"openid email profile doctalk_auth_api","client_id":"ro.client","client_secret":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-08-08 22:15:50.571 +10:00 [DBG] Getting claims for access token for client: ro.client
+2019-08-08 22:15:50.572 +10:00 [DBG] Getting claims for access token for subject: a2661b40-2b93-48b8-a5aa-90e6c69797ae
+2019-08-08 22:15:51.038 +10:00 [INF] {"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","RedirectUri":null,"Endpoint":"Token","SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","Scopes":"email openid profile doctalk_auth_api","GrantType":"password","Tokens":[{"TokenType":"access_token","TokenValue":"****nYUw","$type":"Token"}],"Category":"Token","Name":"Token Issued Success","EventType":"Success","Id":2000,"Message":null,"ActivityId":"0HLORV7HT7N4P:00000001","TimeStamp":"2019-08-08T12:15:51.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"TokenIssuedSuccessEvent"}
+2019-08-08 22:15:51.047 +10:00 [DBG] Token request success.
+2019-08-08 22:15:51.345 +10:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2019-08-08 22:15:51.346 +10:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2019-08-08 22:15:51.347 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2019-08-08 22:15:51.349 +10:00 [DBG] Start userinfo request
+2019-08-08 22:15:51.350 +10:00 [DBG] Bearer token found in header
+2019-08-08 22:15:51.520 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-08 22:15:51.586 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-08 22:15:51.695 +10:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2019-08-08 22:15:51.699 +10:00 [DBG] Token validation success
+{"ClientId":null,"ClientName":null,"ValidateLifetime":true,"AccessTokenType":"Jwt","ExpectedScope":"openid","TokenHandle":null,"JwtId":null,"Claims":{"nbf":1565266550,"exp":1596802550,"iss":"http://172.18.11.161:5000","aud":["http://172.18.11.161:5000/resources","doctalk_auth_api"],"client_id":"ro.client","sub":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","auth_time":1565266550,"idp":"local","scope":["email","openid","profile","doctalk_auth_api"],"amr":"pwd"},"$type":"TokenValidationLog"}
+2019-08-08 22:15:51.720 +10:00 [DBG] Creating userinfo response
+2019-08-08 22:15:51.746 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-08 22:15:51.754 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-08 22:15:51.761 +10:00 [DBG] Requested claim types: email email_verified sub name family_name given_name middle_name nickname preferred_username profile picture website gender birthdate zoneinfo locale updated_at
+2019-08-08 22:15:51.762 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-08 22:15:51.791 +10:00 [INF] Profile service returned the following claim types: sub preferred_username name email email_verified
+2019-08-08 22:15:51.799 +10:00 [DBG] End userinfo request
+2019-08-08 22:18:37.177 +10:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-08-08 22:18:37.186 +10:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-08-08 22:18:37.211 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-08-08 22:18:37.215 +10:00 [DBG] Start token request.
+2019-08-08 22:18:37.218 +10:00 [DBG] Start client validation
+2019-08-08 22:18:37.220 +10:00 [DBG] Start parsing Basic Authentication secret
+2019-08-08 22:18:37.222 +10:00 [DBG] Start parsing for secret in post body
+2019-08-08 22:18:37.226 +10:00 [DBG] Parser found secret: PostBodySecretParser
+2019-08-08 22:18:37.229 +10:00 [DBG] Secret id found: ro.client
+2019-08-08 22:18:37.235 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-08 22:18:37.237 +10:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-08-08 22:18:37.239 +10:00 [DBG] Client validation success
+2019-08-08 22:18:37.240 +10:00 [INF] {"ClientId":"ro.client","AuthenticationMethod":"SharedSecret","Category":"Authentication","Name":"Client Authentication Success","EventType":"Success","Id":1010,"Message":null,"ActivityId":"0HLORV7HT7N4R:00000001","TimeStamp":"2019-08-08T12:18:37.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"ClientAuthenticationSuccessEvent"}
+2019-08-08 22:18:37.262 +10:00 [DBG] Start token request validation
+2019-08-08 22:18:37.264 +10:00 [DBG] Start resource owner password token request validation
+2019-08-08 22:18:37.309 +10:00 [INF] Credentials validated for username: nguyenkien1402
+2019-08-08 22:18:37.314 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":"nguyenkien1402","Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLORV7HT7N4R:00000001","TimeStamp":"2019-08-08T12:18:37.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"UserLoginSuccessEvent"}
+2019-08-08 22:18:37.320 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":null,"Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLORV7HT7N4R:00000001","TimeStamp":"2019-08-08T12:18:37.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"UserLoginSuccessEvent"}
+2019-08-08 22:18:37.323 +10:00 [DBG] Resource owner password token request validation success.
+2019-08-08 22:18:37.324 +10:00 [INF] Token request validation success
+{"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","GrantType":"password","Scopes":"doctalk_auth_api email openid profile","AuthorizationCode":null,"RefreshToken":null,"UserName":"nguyenkien1402","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","username":"nguyenkien1402","password":"***REDACTED***","scope":"openid email profile doctalk_auth_api","client_id":"ro.client","client_secret":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-08-08 22:18:37.328 +10:00 [DBG] Getting claims for access token for client: ro.client
+2019-08-08 22:18:37.329 +10:00 [DBG] Getting claims for access token for subject: a2661b40-2b93-48b8-a5aa-90e6c69797ae
+2019-08-08 22:18:37.404 +10:00 [INF] {"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","RedirectUri":null,"Endpoint":"Token","SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","Scopes":"email openid profile doctalk_auth_api","GrantType":"password","Tokens":[{"TokenType":"access_token","TokenValue":"****KjWQ","$type":"Token"}],"Category":"Token","Name":"Token Issued Success","EventType":"Success","Id":2000,"Message":null,"ActivityId":"0HLORV7HT7N4R:00000001","TimeStamp":"2019-08-08T12:18:37.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"TokenIssuedSuccessEvent"}
+2019-08-08 22:18:37.416 +10:00 [DBG] Token request success.
+2019-08-08 22:18:37.577 +10:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2019-08-08 22:18:37.592 +10:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2019-08-08 22:18:37.625 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2019-08-08 22:18:37.637 +10:00 [DBG] Start userinfo request
+2019-08-08 22:18:37.642 +10:00 [DBG] Bearer token found in header
+2019-08-08 22:18:37.653 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-08 22:18:37.655 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-08 22:18:37.672 +10:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2019-08-08 22:18:37.675 +10:00 [DBG] Token validation success
+{"ClientId":null,"ClientName":null,"ValidateLifetime":true,"AccessTokenType":"Jwt","ExpectedScope":"openid","TokenHandle":null,"JwtId":null,"Claims":{"nbf":1565266717,"exp":1596802717,"iss":"http://172.18.11.161:5000","aud":["http://172.18.11.161:5000/resources","doctalk_auth_api"],"client_id":"ro.client","sub":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","auth_time":1565266717,"idp":"local","scope":["email","openid","profile","doctalk_auth_api"],"amr":"pwd"},"$type":"TokenValidationLog"}
+2019-08-08 22:18:37.682 +10:00 [DBG] Creating userinfo response
+2019-08-08 22:18:37.683 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-08 22:18:37.684 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-08 22:18:37.686 +10:00 [DBG] Requested claim types: email email_verified sub name family_name given_name middle_name nickname preferred_username profile picture website gender birthdate zoneinfo locale updated_at
+2019-08-08 22:18:37.687 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-08 22:18:37.741 +10:00 [INF] Profile service returned the following claim types: sub preferred_username name email email_verified
+2019-08-08 22:18:37.742 +10:00 [DBG] End userinfo request
+2019-08-08 22:18:40.276 +10:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-08-08 22:18:40.311 +10:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-08-08 22:18:40.318 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-08-08 22:18:40.334 +10:00 [DBG] Start discovery request
+2019-08-08 22:18:40.643 +10:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2019-08-08 22:18:40.645 +10:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2019-08-08 22:18:40.649 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2019-08-08 22:18:40.657 +10:00 [DBG] Start key discovery request
+2019-08-08 22:26:29.437 +10:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-08-08 22:26:29.455 +10:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-08-08 22:26:29.456 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-08-08 22:26:29.458 +10:00 [DBG] Start token request.
+2019-08-08 22:26:29.459 +10:00 [DBG] Start client validation
+2019-08-08 22:26:29.459 +10:00 [DBG] Start parsing Basic Authentication secret
+2019-08-08 22:26:29.460 +10:00 [DBG] Start parsing for secret in post body
+2019-08-08 22:26:29.462 +10:00 [DBG] Parser found secret: PostBodySecretParser
+2019-08-08 22:26:29.463 +10:00 [DBG] Secret id found: ro.client
+2019-08-08 22:26:29.464 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-08 22:26:29.465 +10:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-08-08 22:26:29.466 +10:00 [DBG] Client validation success
+2019-08-08 22:26:29.467 +10:00 [INF] {"ClientId":"ro.client","AuthenticationMethod":"SharedSecret","Category":"Authentication","Name":"Client Authentication Success","EventType":"Success","Id":1010,"Message":null,"ActivityId":"0HLORV7HT7N4U:00000001","TimeStamp":"2019-08-08T12:26:29.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"ClientAuthenticationSuccessEvent"}
+2019-08-08 22:26:29.472 +10:00 [DBG] Start token request validation
+2019-08-08 22:26:29.473 +10:00 [DBG] Start resource owner password token request validation
+2019-08-08 22:26:29.531 +10:00 [INF] Credentials validated for username: nguyenkien1402
+2019-08-08 22:26:29.533 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":"nguyenkien1402","Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLORV7HT7N4U:00000001","TimeStamp":"2019-08-08T12:26:29.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"UserLoginSuccessEvent"}
+2019-08-08 22:26:29.537 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":null,"Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLORV7HT7N4U:00000001","TimeStamp":"2019-08-08T12:26:29.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"UserLoginSuccessEvent"}
+2019-08-08 22:26:29.542 +10:00 [DBG] Resource owner password token request validation success.
+2019-08-08 22:26:29.543 +10:00 [INF] Token request validation success
+{"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","GrantType":"password","Scopes":"doctalk_auth_api email openid profile","AuthorizationCode":null,"RefreshToken":null,"UserName":"nguyenkien1402","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","username":"nguyenkien1402","password":"***REDACTED***","scope":"openid email profile doctalk_auth_api","client_id":"ro.client","client_secret":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-08-08 22:26:29.547 +10:00 [DBG] Getting claims for access token for client: ro.client
+2019-08-08 22:26:29.547 +10:00 [DBG] Getting claims for access token for subject: a2661b40-2b93-48b8-a5aa-90e6c69797ae
+2019-08-08 22:26:29.578 +10:00 [INF] {"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","RedirectUri":null,"Endpoint":"Token","SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","Scopes":"email openid profile doctalk_auth_api","GrantType":"password","Tokens":[{"TokenType":"access_token","TokenValue":"****Za0Q","$type":"Token"}],"Category":"Token","Name":"Token Issued Success","EventType":"Success","Id":2000,"Message":null,"ActivityId":"0HLORV7HT7N4U:00000001","TimeStamp":"2019-08-08T12:26:29.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"TokenIssuedSuccessEvent"}
+2019-08-08 22:26:29.582 +10:00 [DBG] Token request success.
+2019-08-08 22:26:29.644 +10:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2019-08-08 22:26:29.645 +10:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2019-08-08 22:26:29.646 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2019-08-08 22:26:29.647 +10:00 [DBG] Start userinfo request
+2019-08-08 22:26:29.647 +10:00 [DBG] Bearer token found in header
+2019-08-08 22:26:29.654 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-08 22:26:29.655 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-08 22:26:29.664 +10:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2019-08-08 22:26:29.665 +10:00 [DBG] Token validation success
+{"ClientId":null,"ClientName":null,"ValidateLifetime":true,"AccessTokenType":"Jwt","ExpectedScope":"openid","TokenHandle":null,"JwtId":null,"Claims":{"nbf":1565267189,"exp":1596803189,"iss":"http://172.18.11.161:5000","aud":["http://172.18.11.161:5000/resources","doctalk_auth_api"],"client_id":"ro.client","sub":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","auth_time":1565267189,"idp":"local","scope":["email","openid","profile","doctalk_auth_api"],"amr":"pwd"},"$type":"TokenValidationLog"}
+2019-08-08 22:26:29.669 +10:00 [DBG] Creating userinfo response
+2019-08-08 22:26:29.670 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-08 22:26:29.671 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-08 22:26:29.672 +10:00 [DBG] Requested claim types: email email_verified sub name family_name given_name middle_name nickname preferred_username profile picture website gender birthdate zoneinfo locale updated_at
+2019-08-08 22:26:29.673 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-08 22:26:29.711 +10:00 [INF] Profile service returned the following claim types: sub preferred_username name email email_verified
+2019-08-08 22:26:29.712 +10:00 [DBG] End userinfo request
+2019-08-08 22:30:25.927 +10:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-08-08 22:30:25.934 +10:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-08-08 22:30:25.941 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-08-08 22:30:25.942 +10:00 [DBG] Start token request.
+2019-08-08 22:30:25.943 +10:00 [DBG] Start client validation
+2019-08-08 22:30:25.943 +10:00 [DBG] Start parsing Basic Authentication secret
+2019-08-08 22:30:25.944 +10:00 [DBG] Start parsing for secret in post body
+2019-08-08 22:30:25.945 +10:00 [DBG] Parser found secret: PostBodySecretParser
+2019-08-08 22:30:25.946 +10:00 [DBG] Secret id found: ro.client
+2019-08-08 22:30:25.949 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-08 22:30:25.951 +10:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-08-08 22:30:25.952 +10:00 [DBG] Client validation success
+2019-08-08 22:30:25.954 +10:00 [INF] {"ClientId":"ro.client","AuthenticationMethod":"SharedSecret","Category":"Authentication","Name":"Client Authentication Success","EventType":"Success","Id":1010,"Message":null,"ActivityId":"0HLORV7HT7N50:00000001","TimeStamp":"2019-08-08T12:30:25.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"ClientAuthenticationSuccessEvent"}
+2019-08-08 22:30:25.958 +10:00 [DBG] Start token request validation
+2019-08-08 22:30:25.958 +10:00 [DBG] Start resource owner password token request validation
+2019-08-08 22:30:25.992 +10:00 [INF] Credentials validated for username: nguyenkien1402
+2019-08-08 22:30:25.994 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":"nguyenkien1402","Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLORV7HT7N50:00000001","TimeStamp":"2019-08-08T12:30:25.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"UserLoginSuccessEvent"}
+2019-08-08 22:30:25.999 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":null,"Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLORV7HT7N50:00000001","TimeStamp":"2019-08-08T12:30:25.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"UserLoginSuccessEvent"}
+2019-08-08 22:30:26.002 +10:00 [DBG] Resource owner password token request validation success.
+2019-08-08 22:30:26.003 +10:00 [INF] Token request validation success
+{"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","GrantType":"password","Scopes":"doctalk_auth_api email openid profile","AuthorizationCode":null,"RefreshToken":null,"UserName":"nguyenkien1402","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","username":"nguyenkien1402","password":"***REDACTED***","scope":"openid email profile doctalk_auth_api","client_id":"ro.client","client_secret":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-08-08 22:30:26.007 +10:00 [DBG] Getting claims for access token for client: ro.client
+2019-08-08 22:30:26.007 +10:00 [DBG] Getting claims for access token for subject: a2661b40-2b93-48b8-a5aa-90e6c69797ae
+2019-08-08 22:30:26.031 +10:00 [INF] {"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","RedirectUri":null,"Endpoint":"Token","SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","Scopes":"email openid profile doctalk_auth_api","GrantType":"password","Tokens":[{"TokenType":"access_token","TokenValue":"****TAjw","$type":"Token"}],"Category":"Token","Name":"Token Issued Success","EventType":"Success","Id":2000,"Message":null,"ActivityId":"0HLORV7HT7N50:00000001","TimeStamp":"2019-08-08T12:30:26.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"TokenIssuedSuccessEvent"}
+2019-08-08 22:30:26.037 +10:00 [DBG] Token request success.
+2019-08-08 22:30:26.101 +10:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2019-08-08 22:30:26.102 +10:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2019-08-08 22:30:26.103 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2019-08-08 22:30:26.104 +10:00 [DBG] Start userinfo request
+2019-08-08 22:30:26.105 +10:00 [DBG] Bearer token found in header
+2019-08-08 22:30:26.114 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-08 22:30:26.116 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-08 22:30:26.124 +10:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2019-08-08 22:30:26.125 +10:00 [DBG] Token validation success
+{"ClientId":null,"ClientName":null,"ValidateLifetime":true,"AccessTokenType":"Jwt","ExpectedScope":"openid","TokenHandle":null,"JwtId":null,"Claims":{"nbf":1565267426,"exp":1596803426,"iss":"http://172.18.11.161:5000","aud":["http://172.18.11.161:5000/resources","doctalk_auth_api"],"client_id":"ro.client","sub":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","auth_time":1565267425,"idp":"local","scope":["email","openid","profile","doctalk_auth_api"],"amr":"pwd"},"$type":"TokenValidationLog"}
+2019-08-08 22:30:26.130 +10:00 [DBG] Creating userinfo response
+2019-08-08 22:30:26.131 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-08 22:30:26.132 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-08 22:30:26.133 +10:00 [DBG] Requested claim types: email email_verified sub name family_name given_name middle_name nickname preferred_username profile picture website gender birthdate zoneinfo locale updated_at
+2019-08-08 22:30:26.134 +10:00 [DBG] Scopes in access token: email openid profile doctalk_auth_api
+2019-08-08 22:30:26.160 +10:00 [INF] Profile service returned the following claim types: sub preferred_username name email email_verified
+2019-08-08 22:30:26.161 +10:00 [DBG] End userinfo request
+2019-08-08 22:30:29.024 +10:00 [DBG] Request path /connect/token matched to endpoint type Token
+2019-08-08 22:30:29.083 +10:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2019-08-08 22:30:29.145 +10:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2019-08-08 22:30:29.186 +10:00 [DBG] Start token request.
+2019-08-08 22:30:29.195 +10:00 [DBG] Start client validation
+2019-08-08 22:30:29.197 +10:00 [DBG] Start parsing Basic Authentication secret
+2019-08-08 22:30:29.198 +10:00 [DBG] Start parsing for secret in post body
+2019-08-08 22:30:29.199 +10:00 [DBG] Parser found secret: PostBodySecretParser
+2019-08-08 22:30:29.201 +10:00 [DBG] Secret id found: ro.client
+2019-08-08 22:30:29.202 +10:00 [DBG] client configuration validation for client ro.client succeeded.
+2019-08-08 22:30:29.203 +10:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2019-08-08 22:30:29.204 +10:00 [DBG] Client validation success
+2019-08-08 22:30:29.205 +10:00 [INF] {"ClientId":"ro.client","AuthenticationMethod":"SharedSecret","Category":"Authentication","Name":"Client Authentication Success","EventType":"Success","Id":1010,"Message":null,"ActivityId":"0HLORV7HT7N52:00000001","TimeStamp":"2019-08-08T12:30:29.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"ClientAuthenticationSuccessEvent"}
+2019-08-08 22:30:29.208 +10:00 [DBG] Start token request validation
+2019-08-08 22:30:29.208 +10:00 [DBG] Start resource owner password token request validation
+2019-08-08 22:30:29.227 +10:00 [INF] Credentials validated for username: nguyenkien1402
+2019-08-08 22:30:29.228 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":"nguyenkien1402","Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLORV7HT7N52:00000001","TimeStamp":"2019-08-08T12:30:29.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"UserLoginSuccessEvent"}
+2019-08-08 22:30:29.232 +10:00 [INF] {"Username":"nguyenkien1402","Provider":null,"ProviderUserId":null,"SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","DisplayName":null,"Endpoint":"Token","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLORV7HT7N52:00000001","TimeStamp":"2019-08-08T12:30:29.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"UserLoginSuccessEvent"}
+2019-08-08 22:30:29.237 +10:00 [DBG] Resource owner password token request validation success.
+2019-08-08 22:30:29.531 +10:00 [INF] Token request validation success
+{"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","GrantType":"password","Scopes":"doctalk_auth_api email openid profile","AuthorizationCode":null,"RefreshToken":null,"UserName":"nguyenkien1402","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","username":"nguyenkien1402","password":"***REDACTED***","scope":"openid email profile doctalk_auth_api","client_id":"ro.client","client_secret":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2019-08-08 22:30:29.661 +10:00 [DBG] Getting claims for access token for client: ro.client
+2019-08-08 22:30:29.675 +10:00 [DBG] Getting claims for access token for subject: a2661b40-2b93-48b8-a5aa-90e6c69797ae
+2019-08-08 22:30:30.113 +10:00 [INF] {"ClientId":"ro.client","ClientName":"Authentication for DocTalk Application","RedirectUri":null,"Endpoint":"Token","SubjectId":"a2661b40-2b93-48b8-a5aa-90e6c69797ae","Scopes":"email openid profile doctalk_auth_api","GrantType":"password","Tokens":[{"TokenType":"access_token","TokenValue":"****lKZQ","$type":"Token"}],"Category":"Token","Name":"Token Issued Success","EventType":"Success","Id":2000,"Message":null,"ActivityId":"0HLORV7HT7N52:00000001","TimeStamp":"2019-08-08T12:30:30.0000000Z","ProcessId":18244,"LocalIpAddress":"172.18.11.161:5000","RemoteIpAddress":"172.18.11.161","$type":"TokenIssuedSuccessEvent"}
+2019-08-08 22:30:30.364 +10:00 [DBG] Token request success.
